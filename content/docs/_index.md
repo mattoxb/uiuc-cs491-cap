@@ -1,9 +1,12 @@
 ---
-title: Docs
+title: Course Documentation
 type: book  # Do not modify.
 toc: false
 ---
 
-Welcome to the _Project Docs_ template!
+ - Meeting Time: TR 12:30 &ndash; 13:45
+ - Location: [1105 Siebel Center]()
+ - CRN: 65816
+ - Instructor: [Mattox Beckman](https://mattox.web.illinos.edu)
 
-{{< cta cta_text="👉 Get Started with Chapter 1" cta_link="chapter1" >}}
+{{< cta cta_text="👉 Get Started with the Syllabus" cta_link="getting-started/syllabus" >}}

@@ -2,19 +2,19 @@
 widget: featurette
 headless: true
 weight: 20
-title: Features
-subtitle: Document _anything_ ✨
+title: Quick Links
+subtitle: 
 feature:
-  - icon: book-open
-    icon_pack: fas
-    name: Project Documentation
-    description: For users
   - icon: question
     icon_pack: fas
-    name: Knowledge Base
-    description: For teams
+    name: "[Why Competitive Programming?](docs/why)"
+    description: Why you should take this course!
+  - icon: book-open
+    icon_pack: fas
+    name: Syllabus
+    description: Logistics, grading, and other info.
   - icon: list-alt
     icon_pack: fas
-    name: Personal Notebook
-    description: For yourself
+    name: Lecture and Assignment Schedule
+    description: What we'll cover, and when!
 ---
