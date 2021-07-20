@@ -10,7 +10,7 @@ design:
     gradient_end: '#2b94c3'
     text_color_light: true
 cta:
-  url: docs/syllabus/
+  url: docs/getting-started/syllabus
   label: Syllabus
   icon_pack: fas
   icon: download
@@ -18,7 +18,7 @@ cta:
   url: docs/lectures
   label: Lectures
 cta:
-  url: docs/why
+  url: docs/getting-started/why
   label: Why Competitive Programming?
 cta_note:
   label: >-

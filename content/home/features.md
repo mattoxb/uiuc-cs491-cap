@@ -7,11 +7,11 @@ subtitle:
 feature:
   - icon: question
     icon_pack: fas
-    name: "[Why Competitive Programming?](docs/why)"
+    name: "[Why Competitive Programming?](docs/getting-started/why)"
     description: Why you should take this course!
   - icon: book-open
     icon_pack: fas
-    name: Syllabus
+    name: "[Syllabus](docs/getting-started/syllabus)"
     description: Logistics, grading, and other info.
   - icon: list-alt
     icon_pack: fas
