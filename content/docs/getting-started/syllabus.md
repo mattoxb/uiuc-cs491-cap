@@ -20,7 +20,7 @@ type: book
   - Instructor: Mattox Beckman
   - Recommended Textbooks: 
      - [Competitive Programming 4](https://cpbook.org)
-     - [Competitive Programming 4](https://cpbook.org)
+     - [Guide to Competitive Programming](https://link.springer.com/book/10.1007/978-3-319-72547-5)
   - Prerequisites: ability to program is necessary; CS 225 recommended.  The course will support C++ and Python, and possibly Kotlin.
   - Office Hours: tba
 

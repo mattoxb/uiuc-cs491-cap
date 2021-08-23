@@ -61,5 +61,6 @@ Practice.  A lot.  But do it efficiently...
   - Join the CampusWire forum.  If you registered before class started, you should have gotten an invite.  If you registered late,
     or did not get the invite, you need to email the instructor.
   - Get yourself a copy of [Competitive Programming 4](https://cpbook.net).  It is a two book set.
+  - Get yourself a copy of [Guide to Competitive Programming](https://link.springer.com/book/10.1007/978-3-319-72547-5).  As of this writing the PDF is free.
   - Fill out this form (to be provided) to register your judge ids.
 

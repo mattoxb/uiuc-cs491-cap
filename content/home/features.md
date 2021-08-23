@@ -15,6 +15,6 @@ feature:
     description: Logistics, grading, and other info.
   - icon: list-alt
     icon_pack: fas
-    name: Lecture and Assignment Schedule
+    name: "[Lecture Schedule](lectures)"
     description: What we'll cover, and when!
 ---
