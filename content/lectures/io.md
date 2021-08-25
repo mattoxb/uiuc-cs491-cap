@@ -9,7 +9,8 @@ icon_pack: fas
 # Page metadata.
 title: IO and Ad-Hoc Problems
 date: "2021-08-17T00:00:00Z"
-type: book  # Do not modify.
+lecturedate: "2021-08-26T12:30:00Z"
+type: page 
 ---
 
 ## Synopsis
@@ -23,6 +24,11 @@ you will get TLE if you use the wrong one.  (We're looking at you, `cin`!)
  - Competitive Programming 4 --  p 1--18.
  - [`scanf` reference](https://en.cppreference.com/w/cpp/io/c/fscanf)
 
+## Videos
+
+ - [IO]({{% ref "/videos/io" %}})
+ - [Ad-Hoc Problems]({{% ref "/videos/ad-hoc" %}})
+
 ## Problems
 
- - {% UVa 2595 | 11559 - Event Planning %}
+ - {{% UVa id="403" name="462 - Bridge Hand Evaluator" %}}

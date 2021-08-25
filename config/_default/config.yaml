@@ -24,6 +24,15 @@ module:
   imports:
     - path: github.com/wowchemy/wowchemy-hugo-modules/wowchemy-cms
     - path: github.com/wowchemy/wowchemy-hugo-modules/wowchemy
+    - path: github.com/mattoxb/wowchemy-shortcode-awsvideo
+    - path: github.com/mattoxb/wowchemy-shortcode-uva
+
+#####
+## awsVideo shortcode
+#####
+
+params:
+  awsPath: aws-website-cs-videos-r106h/cs491cap
 
 ############################
 ## ADVANCED
