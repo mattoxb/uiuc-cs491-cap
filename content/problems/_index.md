@@ -1,23 +1,18 @@
 ---
 title: Problems
 type: book  # Do not modify.
-toc: false
+toc: true
 ---
 
+## In-class and pre-class problems
 
-<details>
-<summary>In-class and pre-class problems</summary>
+| Lecture Title                                                    | Pre-Class Problems                                      | In-Class Problems                                       |
+|------------------------------------------------------------------|---------------------------------------------------------|---------------------------------------------------------|
+| [Introduction]({{% ref "/lectures/introduction" %}})             | None                                                    | {{< UVa id="2595" name="UVa 11559 - Event Planning" >}} |
+| [IO and Ad Hoc]({{% ref "/lectures/io" %}})                      | {{< UVa id="403" name="462 - Bridge Hand Evaluator" >}} | {{< UVa id="4391" name="UVa 12643 - Tennis Rounds" >}}  |
+| [Arrays and Vectors]({{% ref "/lectures/arrays-and-vectors" %}}) | {{< UVa id="3778" name="12356 - Army Buddies" >}}       |                                                         |
 
-| Date       | Lecture Title                | Pre-Class Problems | In-Class Problems |
-|------------|------------------------------|--------------------|-------------------|
-| 2021-08-24 | [Introduction](introduction) | None               | TBA               |
-| 2021-08-26 | [IO and ]                    |                    |                   |
-
-</details>
-
-<details>
-<summary>Problem Set 1</summary>
+## Problem Set 1
 
 To be announced!
 
-</details>

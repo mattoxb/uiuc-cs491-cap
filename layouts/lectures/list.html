@@ -1,15 +1,13 @@
 {{- define "main" -}}
 {{- partial "page_header.html" . -}}
 <div class="universal-wrapper">
-  Does this work?
-  The list comes here
   <table>
           <tr>
                   <th>Date</th>
                   <th>Title</ht>
           </tr>
   {{ range sort .Pages "Params.lecturedate" "asc" }}
-  <tr><td> {{ dateFormat "Monday, January 2, 2006" .Params.lecturedate }} </td><td> <a href="{{ .Permalink }}">{{ .Params.title }}</a> 
+          <tr><td> {{ dateFormat "Monday, January 2, 2006" .Params.lecturedate }} </td><td> <a href="{{ .Permalink }}">{{ .Params.title }}</a> </tr>
   {{end}}
   </table>
 </div>
