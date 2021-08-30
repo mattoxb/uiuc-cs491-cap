@@ -1,0 +1,14 @@
+---
+# Title, summary, and page position.
+linktitle: IO and Ad Hoc
+summary: How and Why
+weight: 2
+icon: book
+icon_pack: fas
+
+# Page metadata.
+title: IO and Ad-Hoc Problems
+date: "2021-08-17T00:00:00Z"
+lecturedate: "2021-08-26T12:30:00Z"
+type: page 
+---
