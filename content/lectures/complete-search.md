@@ -23,7 +23,8 @@ Sometimes the only thing you can do is try all the possibilities....
 
 ## Video
 
-  - {{$ ref "/videos/complete-search"}}
+  - {{% ref "/videos/complete-search" %}}
+
 ## Problem
 
   - {{<UVa id="666" name="725 - Division" >}}
