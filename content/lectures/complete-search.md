@@ -23,7 +23,7 @@ Sometimes the only thing you can do is try all the possibilities....
 
 ## Video
 
-  - {{% ref "/videos/complete-search" %}}
+  - [Complete Search]({{% ref "/videos/complete-search" %}})
 
 ## Problem
 
