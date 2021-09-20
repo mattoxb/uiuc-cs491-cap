@@ -1,15 +1,16 @@
 ---
+# Title, summary, and page position.
+linktitle: Combinatorics
+summary: How and Why
+weight: 2
+icon: book
+icon_pack: fas
+
+# Page metadata.
 title: Combinatorics - Fibonacci, Binomial, Catalan
-slug: combinatorics
-date: 2021-04-12
-toc: False
-layout: lecture
-links:
-  - category: Videos
-    links:
-      - title: Lecture Video
-        display: true
-        url: /videos/basic-combinatorics
+date: "2021-08-17T00:00:00Z"
+lecturedate: "2021-09-23T12:30:00Z"
+type: page
 ---
 
 ## Synopsis
@@ -20,6 +21,10 @@ sequences that come up: Fibonacci, Binomial Coefficients, Derangements, and Cata
 ## Recommended Reading
 
  - Competitive Programming 4, Section 5.4
+
+## Videos
+
+ - [Basic Combinatorics]({{% ref "/videos/basic-combinatorics" %}})
 
 ## Problem
 
