@@ -1,21 +1,29 @@
 ---
+# Title, summary, and page position.
+linktitle: Basic Graphs
+summary: How and Why
+weight: 2
+icon: book
+icon_pack: fas
+
+# Page metadata.
 title: Basic Graphs
-date: 2021-02-10
-links:
-  - category: Videos
-    links:
-      - title: Lecture Video
-        url: /videos/basic-graphs
-        display: true
+date: "2021-08-17T00:00:00Z"
+lecturedate: "2021-09-30T12:30:00Z"
+type: page
 ---
 
 ## Synopsis
 
 Here is a quick review of graphs.  There are three representations you will want to know.
 
+## Video
+
+ - {{% ref "/videos/basic-graphs" %}}
+
 ## Recommended Reading
 
- - Competitive Programming 3 section 2.4.1
+ - Competitive Programming 
 
 ## Problem
 

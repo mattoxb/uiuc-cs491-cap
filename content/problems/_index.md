@@ -18,6 +18,9 @@ toc: true
 | [Greedy Algorithms]({{% ref "/lectures/greedy-algorithms" %}})   | {{<UVa id="1659" name="10718 - Bit Mask" >}} {{<UVa id="3743" name="12321 - Gas Station" >}} |                                                         |
 | [GCD]({{% ref "/lectures/gcd" %}})                               | {{< UVa id="1031" name="10090 - Marbles" >}}                                                 |                                                         |
 | [Combinatorics]({{% ref "/lectures/combinatorics" %}})           | {{<UVa id="1482" name="10541 - Stripe" >}}                                                   |                                                         |
+| Maps                                                             |                                                                                              |                                                         |
+| Basic Graphs                                                     | {{< UVa id="3142" name="11991 - Easy Problem From Rujia Liu" >}}                             |                                                         |
+|                                                                  |                                                                                              |                                                         |
 |------------------------------------------------------------------|----------------------------------------------------------------------------------------------|---------------------------------------------------------|
 
 ## Problem Set 1
