@@ -8,8 +8,8 @@ icon_pack: fas
 
 # Page metadata.
 title: Union Find
-date: "2021-10-05T00:00:00Z"
-lecturedate: "T12:30:00Z"
+date: "2021-08-05T00:00:00Z"
+lecturedate: "2021-10-05T12:30:00Z"
 type: page
 ---
 
