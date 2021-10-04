@@ -1,8 +1,16 @@
 ---
+# Title, summary, and page position.
+linktitle: Union Find
+summary: How and Why
+weight: 2
+icon: book
+icon_pack: fas
+
+# Page metadata.
 title: Union Find
-layout: lecture
-date: 2021-02-15
-links: []
+date: "2021-10-05T00:00:00Z"
+lecturedate: "T12:30:00Z"
+type: page
 ---
 
 ## Synopsis

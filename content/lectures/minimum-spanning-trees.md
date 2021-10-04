@@ -1,4 +1,21 @@
 ---
+# Title, summary, and page position.
+linktitle: Minimum Spanning Trees 
+summary: How and Why
+weight: 2
+icon: book
+icon_pack: fas
+
+# Page metadata.
+title: Minimum Spanning Trees 
+date: "2021-08-17T00:00:00Z"
+lecturedate: "2021-10-07T12:30:00Z"
+type: page
+---
+
+
+
+---
 title: Minimum Spanning Trees
 date: 2021-02-22
 links:
@@ -17,9 +34,10 @@ links:
 You can create a subgraph of a graph that is a spanning tree, one that keeps the graph connected.
 If you minimize the edge weight while doing this we have a minimum spanning tree.
 
-## Recommended Reading
+## Videos
 
- - Competitive Programming 3, Section 4.3
+ - {{< ref "/videos/minimum-spanning-trees" >}}
+ - {{< ref "/videos/kruscals-algorithm" >}}
 
 ## Problem
 
