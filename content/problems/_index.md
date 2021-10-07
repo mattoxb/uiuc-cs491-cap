@@ -21,7 +21,7 @@ toc: true
 | Maps                                                                    | 11286                                                                                        | 10145 - Lock Manager                                    |
 | Basic Graphs                                                            | {{< UVa id="3142" name="11991 - Easy Problem From Rujia Liu" >}}                             |                                                         |
 | [Union Find]({{% ref "/lectures/union-find" %}})                        | {{< UVa id="400" name="459 - Graph Connectivity" >}}                                         | {{< UVa id="1626" name="10685 - Nature" >}}             |
-| [Minimum Spanning Trees]({{% ref "/lecture/minimum-spanning-trees" %}}) | {{< UVa id="2169" name="11228 - Transportation System" >}}                                   | {{< UVa id="2847" name="11747 - Heavy  Cycle Edges" >}}                                                        |
+| [Minimum Spanning Trees]({{% ref "/lectures/minimum-spanning-trees" %}}) | {{< UVa id="2169" name="11228 - Transportation System" >}}                                   | {{< UVa id="2847" name="11747 - Heavy  Cycle Edges" >}}                                                        |
     
 ## Problem Set 1
 
