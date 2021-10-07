@@ -36,8 +36,8 @@ If you minimize the edge weight while doing this we have a minimum spanning tree
 
 ## Videos
 
- - {{< ref "/videos/minimum-spanning-trees" >}}
- - {{< ref "/videos/kruscals-algorithm" >}}
+ - [Minimum Spanning Trees]({{< ref "/videos/minimum-spanning-trees" >}})
+ - [Kruscal's Algorithm]({{< ref "/videos/kruscals-algorithm" >}})
 
 ## Problem
 
