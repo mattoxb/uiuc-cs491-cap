@@ -1,12 +1,16 @@
 ---
-title: Graph Traversals
-date: 2021-02-24
-links:
-  - category: Videos
-    links:
-      - title: Lecture Video
-        display: false
-        url: /videos/graph-traversals
+# Title, summary, and page position.
+linktitle: Traversals
+summary: Breadth First Search and Depth First Search
+weight: 2
+icon: book
+icon_pack: fas
+
+# Page metadata.
+title: Traversals
+date: "2021-08-17T00:00:00Z"
+lecturedate: "2021-10-12T12:30:00Z"
+type: page
 ---
 
 ## Synopsis
@@ -16,7 +20,7 @@ links:
     - Flood Fill
     - Topological Sort
 
-  Sorry, no video for this one!
+  - Video will appear here
 
 ## Recommended Reading
 
