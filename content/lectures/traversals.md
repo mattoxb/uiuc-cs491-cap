@@ -20,7 +20,7 @@ type: page
     - Flood Fill
     - Topological Sort
 
-  - Video will appear here
+  - [Video](https://mediaspace.illinois.edu/media/t/1_686vmrld)
 
 ## Recommended Reading
 
