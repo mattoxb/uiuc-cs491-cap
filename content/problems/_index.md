@@ -39,5 +39,27 @@ toc: true
 
 ## Problem Set 1
 
-To be announced!
+- {{<UVa id="455" name="514 - Rails">}}
+- {{<UVa id="919" name="978 - Lemmings Battle!">}}
+- {{<UVa id="1113" name="10172 - The Lonesome Cargo Distributor">}}
+- {{<UVa id="1842" name="10901 - Ferry Loading III">}}
+- {{<UVa id="1975" name="11034 - Ferry Loading IV">}}
+- {{<UVa id="2077" name="11136 - Hoax or what">}}
+- {{<UVa id="2619" name="11572 - Unique Snowflakes">}}
+- {{<UVa id="3146" name="11995 - I Can Guess the Data Structure!">}}
+- {{<UVa id="3503" name="1062 - Containers">}}
+- {{<UVa id="3644" name="1203 - Argus">}}
+
+## Problem Set 2
+
+- {{<UVa id="1168" name="10227 - Forests">}}
+- {{<UVa id="1836" name="10895 - Matrix Transpose">}}
+- {{<UVa id="2272" name="11297 - Census">}}
+- {{<UVa id="2545" name="11550 - Demanding Dilemma">}}
+- {{<UVa id="3238" name="12086 - Potentiometers">}}
+- {{<UVa id="3638" name="1197 - The Suspects">}}
+- {{<UVa id="3673" name="1232 - SKYLINE">}}
+- {{<UVa id="3977" name="12532 - Interval Product">}}
+- {{<UVa id="540" name="599 - The Forrest for the Trees">}}
+- {{<UVa id="734" name="793 - Network Connections">}}
 
