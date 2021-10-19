@@ -8,8 +8,8 @@ icon_pack: fas
 
 # Page metadata.
 title: Single Source Shortest Path 
-date: "2021-08-17T00:00:00Z"
-lecturedate: "2010-10-19T12:30:00Z"
+date: "2020-08-17T00:00:00Z"
+lecturedate: "2021-10-19T12:30:00Z"
 type: page
 ---
 
