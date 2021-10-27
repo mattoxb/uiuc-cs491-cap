@@ -27,16 +27,15 @@ toc: true
 | Single Source Shortest path                                              | {{<UVa id="370" name="429 - Word Transformation" >}}                                         |                                                         |
 | All Pairs Shortest Paths                                                 | {{<UVa id="762" name="821 - Page Hopping" >}}                                                | {{<UVa id="810" name="869 - Airline Comparison">}}      |
 | Network Flow                                                             | {{< UVa id="761" name="820 - Internet Bandwidth" >}}                                         |  {{<UVa id="4738" name="12873 - The Programmers">}}                                                       |
-
-| Dynamic Programming                                                      |                                                                                              |                                                         |
-| Fenwick Trees                                                            |                                                                                              |                                                         |
-| Segment Trees                                                            |                                                                                              |                                                         |
-| Strings                                                                  |                                                                                              |                                                         |
-| Points, Lines, and Vectors                                               |                                                                                              |                                                         |
-| Shapes                                                                   |                                                                                              |                                                         |
-| Convex Hull                                                              |                                                                                              |                                                         |
-| a-Star Search                                                            |                                                                                              |                                                         |
-| Games                                                                    |                                                                                              |                                                         |
+| Dynamic Programming        | {{<UVa id="2512" name=" 11517 - Exact Change" >}} |   |
+| Fenwick Trees              |                                                   |   |
+| Segment Trees              |                                                   |   |
+| Strings                    |                                                   |   |
+| Points, Lines, and Vectors |                                                   |   |
+| Shapes                     |                                                   |   |
+| Convex Hull                |                                                   |   |
+| a-Star Search              |                                                   |   |
+| Games                      |                                                   |   |
 
 ## Problem Set 1
 
