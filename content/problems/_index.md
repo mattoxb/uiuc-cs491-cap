@@ -28,8 +28,8 @@ toc: true
 | All Pairs Shortest Paths                                                 | {{<UVa id="762" name="821 - Page Hopping" >}}                                                | {{<UVa id="810" name="869 - Airline Comparison">}}      |
 | Network Flow                                                             | {{< UVa id="761" name="820 - Internet Bandwidth" >}}                                         |  {{<UVa id="4738" name="12873 - The Programmers">}}                                                       |
 | Dynamic Programming        | {{<UVa id="2512" name=" 11517 - Exact Change" >}} |   |
-| Fenwick Trees              |                                                   |   |
-| Segment Trees              |                                                   |   |
+| Fenwick Trees              | {{<UVa id="3977" name="12532 - Interval Product">}}                                                  |   |
+| Segment Trees              | {{<UVa id="2176" name="11235 - Frequent Values" >}}                                                  |   |
 | Strings                    |                                                   |   |
 | Points, Lines, and Vectors |                                                   |   |
 | Shapes                     |                                                   |   |
