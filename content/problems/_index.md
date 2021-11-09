@@ -30,12 +30,12 @@ toc: true
 | Dynamic Programming        | {{<UVa id="2512" name=" 11517 - Exact Change" >}} |   |
 | Fenwick Trees              | {{<UVa id="3977" name="12532 - Interval Product">}}                                                  |   |
 | Segment Trees              | {{<UVa id="2176" name="11235 - Frequent Values" >}}                                                  |   |
-| Strings                    |                                                   |   |
-| Points, Lines, and Vectors |                                                   |   |
-| Shapes                     |                                                   |   |
+| Points, Lines, and Vectors | {{<UVa id="1204" name="10263 - Railway" >}}                                                  |   |
+| Shapes                     | {{<UVa id="1530" name="10589 - Area" >}}                                                  |   |
 | Convex Hull                |                                                   |   |
 | a-Star Search              |                                                   |   |
 | Games                      |                                                   |   |
+| Strings                    |                                                   |   |
 
 ## Problem Set 1
 
