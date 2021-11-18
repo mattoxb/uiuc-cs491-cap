@@ -23,7 +23,7 @@ Here is a brief lecture about modeling games.
 
 ## Video
 
- - {{<ref "/videos/games" >}}
+ - [Games]({{<ref "/videos/games" >}})
 
 ## Problem
 
