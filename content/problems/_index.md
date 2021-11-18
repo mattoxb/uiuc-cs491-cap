@@ -32,9 +32,9 @@ toc: true
 | Segment Trees              | {{<UVa id="2176" name="11235 - Frequent Values" >}}                                                  |   |
 | Points, Lines, and Vectors | {{<UVa id="1204" name="10263 - Railway" >}}                                                  |   |
 | Shapes                     | {{<UVa id="1530" name="10589 - Area" >}}                                                  |   |
-| Convex Hull                |                                                   |   |
+| Convex Hull                | {{<UVa id="3552" name="01111 - Trash Removal" >}}                                                  |   |
+| Games                      | {{<UVa id="788" name="847 - Multiplication Game" >}}                                                  |   |
 | a-Star Search              |                                                   |   |
-| Games                      |                                                   |   |
 | Strings                    |                                                   |   |
 
 ## Problem Set 1
