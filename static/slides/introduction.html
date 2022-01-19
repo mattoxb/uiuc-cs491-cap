@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Introduction to Competitive Programming</title>
+<meta name="author" content="Mattox Beckman"/>
+<style type="text/css">
+.underline { text-decoration: underline; }
+</style>
+<link rel="stylesheet" href="../dist/reveal.css"/>
+
+<link rel="stylesheet" href="../dist/theme/beige.css" id="theme"/>
+
+<link rel="stylesheet" href="custom.css"/>
+<link rel="stylesheet" href="../plugin/highlight/zenburn.css"/>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+<section id="sec-title-slide">
+<h1 class="title">Introduction to Competitive Programming</h1><h2 class="author">Mattox Beckman</h2>
+</section>
+<section id="table-of-contents-section">
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#/slide-821a8f12-9972-4678-858d-d71e38ba05ba">Introduction and Logistics</a></li>
+<li><a href="#/slide-5687acd1-12d5-48bf-9664-7eeb47be0fb4">ICPC, IPL, and Contests</a></li>
+<li><a href="#/slide-ef737bd0-fdb3-46ae-aa69-2dd8046866b1">Approach to Solving ICPC Problems</a></li>
+</ul>
+</div>
+</div>
+</section>
+
+<section>
+<section id="slide-821a8f12-9972-4678-858d-d71e38ba05ba">
+<h2 id="821a8f12-9972-4678-858d-d71e38ba05ba">Introduction and Logistics</h2>
+<p>
+In which we discuss how the course will work&#x2026;
+</p>
+
+</section>
+</section>
+<section>
+<section id="slide-306ab2cf-1378-4889-8be7-d536df3fbbc7">
+<h3 id="306ab2cf-1378-4889-8be7-d536df3fbbc7">Welcome to CS 491 CAP!</h3>
+<p>
+Your Objectives:
+</p>
+
+<ul>
+<li>Describe the goals and prerequisites of this course.</li>
+<li>Describe the grading scheme.</li>
+<li>Be able to practice effectively.</li>
+
+</ul>
+
+
+</section>
+</section>
+<section>
+<section id="slide-583b6e81-d102-4a7f-be2f-43fda8188671">
+<h3 id="583b6e81-d102-4a7f-be2f-43fda8188671">Course Goals</h3>
+<p>
+Why take this course?
+</p>
+
+<ul>
+<li>Primary course goal: make you good at competitive programming!</li>
+<li>Why should you want to do that?
+<ul>
+<li>It&rsquo;s fun!</li>
+<li>Opportunity to learn:
+<ul>
+<li>useful data structures, algorithms, and mathematical insights;</li>
+<li>practical applications of data structures and algorithms;</li>
+<li>how to code and debug effectively; and</li>
+<li>how to work well on a team.</li>
+
+</ul></li>
+<li>You&rsquo;ll do really well on job interviews!</li>
+
+</ul></li>
+<li>But what if I&rsquo;m not as good as those others?</li>
+
+</ul>
+
+</section>
+</section>
+<section>
+<section id="slide-a6074013-c074-418e-a07e-2ae14d94aaf4">
+<h3 id="a6074013-c074-418e-a07e-2ae14d94aaf4">Am I ready for this?</h3>
+<p>
+Do I Need CS 225 or 374?
+</p>
+<ul>
+<li>No!  They help, but it&rsquo;s more important to know how to <i>use</i> the algorithms than to implement them.</li>
+<li>Skills Needed
+<ul>
+<li>Familiarity with C, C++, or Java (CS 125)</li>
+<li>Willing to learn basic data structures (CS 225).</li>
+<li>Comfortable with recursion and algorithmic explanations (CS 173).</li>
+<li>Most important: eagerness to learn and practice!!</li>
+
+</ul></li>
+<li>Textbooks
+<ul>
+<li><b>Competitive Programming 4</b> by Steven and Felix</li>
+<li>Optional: <b>Guide to Competitive Programming</b> by Antti Laaksonen</li>
+
+</ul></li>
+
+</ul>
+
+</section>
+</section>
+<section>
+<section id="slide-foo">
+<h3 id="foo">Lecture Format</h3>
+<ul>
+<li>Each period will have the following workflow:
+<ul>
+<li><b>Lecture Video</b>
+<ul>
+<li>A short lecture video or two will introduce the topic.</li>
+<li>Meant as a big-picture introduction, not to teach the algorithm.</li>
+<li>You get to teach yourself by studying the implementation!</li>
+
+</ul></li>
+<li><b>Sample Problem(s)</b>
+<ul>
+<li>One &ldquo;easy&rdquo; sample problem to do before class
+<ul>
+<li>Class will begin with a short discussion of the problems.</li>
+
+</ul></li>
+<li>A more interesting problem to do during class.
+<ul>
+<li>You can work in groups of up to three, but everyone must turn it in themselves!</li>
+<li>Hints given the last 10 minutes of class</li>
+
+</ul></li>
+
+</ul></li>
+
+</ul></li>
+
+</ul>
+
+</section>
+</section>
+<section>
+<section id="slide-org5a17202">
+<h3 id="org5a17202">Assignments</h3>
+<ul>
+<li><b>Problem Sets</b> You will also get a biweekly problem set.
+<ul>
+<li>Typical format: 10 problems.  You must solve at least 6 of them.</li>
+<li>Submit all problems to the corresponding online judge.</li>
+<li>The in-class problems together count as two problem sets for grading.</li>
+
+</ul></li>
+<li><b>Contests</b> You can also participate in some contests.
+<ul>
+<li>A 5 hour contest will replace one problem set.</li>
+
+</ul></li>
+
+</ul>
+
+<p>
+<b>NB: Please do not copy-paste code from other sources.  You are only hurting yourself if you do!</b>
+</p>
+<aside class="notes">
+<p>
+Tell them about the thing!
+</p>
+
+</aside>
+
+</section>
+</section>
+<section>
+<section id="slide-66759afe-8ab6-4fa1-8278-099e050918e4">
+<h3 id="66759afe-8ab6-4fa1-8278-099e050918e4">Grading</h3>
+<p>
+Course is Pass/Fail: Passing is 70%.
+</p>
+<ul>
+<li>Attendance: 20%.
+<ul>
+<li>Measured by submission of ``pre-class&rsquo;&rsquo; practice problems.</li>
+<li>You get four ``excused absences&rsquo;&rsquo; for attendance and participation.</li>
+
+</ul></li>
+<li>Completion of problems: 70%.</li>
+<li>Team Reference Document is worth 10%.
+<ul>
+<li>Due at the end of the semester, but you will want to start working on it.</li>
+
+</ul></li>
+
+</ul>
+
+<p>
+<b>Extra Credit</b>
+</p>
+
+<p>
+There are opportunities for extra credit here too!
+</p>
+
+<ul>
+<li>Attending a tryout counts as one contest or problem set.</li>
+<li>You can get points by contributing new problems to our problem sets.</li>
+
+</ul>
+
+</section>
+</section>
+<section>
+<section id="slide-5687acd1-12d5-48bf-9664-7eeb47be0fb4">
+<h2 id="5687acd1-12d5-48bf-9664-7eeb47be0fb4">ICPC, IPL, and Contests</h2>
+<p>
+You have many opportunities to get involved!
+</p>
+
+</section>
+</section>
+<section>
+<section id="slide-c52cd20e-623e-4209-a13d-6397fe958c08">
+<h3 id="c52cd20e-623e-4209-a13d-6397fe958c08">Programming Contests</h3>
+<ul>
+<li>UIUC ICPC tryouts and practice
+<ul>
+<li><b>The NAQ is this Saturday!</b></li>
+
+</ul></li>
+<li>ACM ICPC
+<ul>
+<li>Regional contest will be Saturday, March 5, 2022.</li>
+<li>North American Championship will probably be around November.</li>
+<li>World Finals&#x2026;?</li>
+
+</ul></li>
+<li>Online contests
+<ul>
+<li>TopCoder SRMs, CodeForces</li>
+<li>Facebook Hacker Cup</li>
+<li>Google Code Jam</li>
+<li>TopCoder Open</li>
+<li>&#x2026; and many others &#x2026;</li>
+
+</ul></li>
+
+</ul>
+
+</section>
+</section>
+<section>
+<section id="slide-034c1a8c-2ad2-4aa6-967c-46d04a09aa9a">
+<h3 id="034c1a8c-2ad2-4aa6-967c-46d04a09aa9a">Online Judges</h3>
+<ul>
+<li>Real contest problems</li>
+<li>Immediate Feedback</li>
+<li>Can emulate contest environment</li>
+<li>List of online judges:
+<ul>
+<li>UVa Online Judge <a href="https://uva.onlinejudge.org/">https://uva.onlinejudge.org/</a></li>
+<li>Code Forces <a href="https://codeforces.com/">https://codeforces.com/</a></li>
+<li>Open Kattis <a href="https://open.kattis.com/">https://open.kattis.com/</a></li>
+<li>Peking Online Judge <a href="http://poj.org">http://poj.org</a></li>
+<li>ACM ICPC Live Archive <a href="https://icpcarchive.ecs.baylor.edu/">https://icpcarchive.ecs.baylor.edu/</a></li>
+<li>Sphere Online Judge (SPOJ): <a href="http://www.spoj.com/">http://www.spoj.com/</a></li>
+<li>Saratov State Online Judge: <a href="http://acm.sgu.ru/">http://acm.sgu.ru/</a></li>
+
+</ul></li>
+
+<li><b>Get an account on each of these!</b></li>
+
+<li>But&#x2026; we will primarily use UVa, Code Forces, and Kattis.
+We will send you a link to collect your online judge IDs later.</li>
+
+</ul>
+
+</section>
+</section>
+<section>
+<section id="slide-886867dd-566c-44c2-b2f5-00d54c3ec0f9">
+<h3 id="886867dd-566c-44c2-b2f5-00d54c3ec0f9">Online Contests</h3>
+<ul>
+<li>Occur 6&#x2013;8 times per month.</li>
+<li>Code Forces
+<a href="http://codeforces.com/">http://codeforces.com/</a></li>
+<li>Top Coder Single Round Matches (SRMs).
+<a href="https://www.topcoder.com/">https://www.topcoder.com/</a></li>
+
+</ul>
+
+
+</section>
+</section>
+<section>
+<section id="slide-b814cdf8-2399-4751-9000-23d9adc519b6">
+<h3 id="b814cdf8-2399-4751-9000-23d9adc519b6">UIUC ICPC Team Meetings</h3>
+<ul>
+<li>SIG ICPC Website: <a href="http://icpc.cs.illinois.edu/ipl.html">http://icpc.cs.illinois.edu/ipl.html</a>
+<ul>
+<li>Contains announcements, practice summaries, and practice resources.</li>
+
+</ul></li>
+<li>Meetings: Tuesdays from 18:00&#x2013;20:00</li>
+<li>Tryouts
+<ul>
+<li>Two of them! (One this Saturday)</li>
+
+</ul></li>
+<li>Join the <a href="https://campuswire.com/p/GACF2E8B2">IPL Campuswire group</a> (Use code 4080).</li>
+
+</ul>
+
+</section>
+</section>
+<section>
+<section id="slide-ef737bd0-fdb3-46ae-aa69-2dd8046866b1">
+<h2 id="ef737bd0-fdb3-46ae-aa69-2dd8046866b1">Approach to Solving ICPC Problems</h2>
+<ol>
+<li><b>Read the problem statement carefully!</b>
+<ul>
+<li>Pay attention to the input/output format specification.</li>
+
+</ul></li>
+<li>Abstract the problem.</li>
+<li>Design an algorithm.</li>
+<li>Implement and debug.</li>
+<li>Submit.</li>
+<li>AC!
+<ul>
+<li>(else <code>GO TO 4</code>&#x2026; or maybe even <code>3</code>)</li>
+
+</ul></li>
+<li><b>If you want to improve rapidly:</b>
+<ul>
+<li>Read the problem commentary afterwards.</li>
+<li>After a contest, ``upsolve&rsquo;&rsquo; any problems you couldn&rsquo;t finish.</li>
+
+</ul></li>
+
+</ol>
+
+</section>
+</section>
+<section>
+<section id="slide-fe30ee5e-93e5-4eb2-8f33-64c8fc848865">
+<h3 id="fe30ee5e-93e5-4eb2-8f33-64c8fc848865">Example Problem</h3>
+<ul>
+<li>POJ 1000: A + B Problem
+<ul>
+<li>Input: two space separated integers, \(a\) and \(b\).</li>
+
+<li>Constraints: \(0 \le a, b \le 10\).</li>
+<li>Output: \(a + b\)</li>
+
+</ul></li>
+
+</ul>
+
+
+</section>
+</section>
+<section>
+<section id="slide-26c0a306-01d0-4569-86cd-7de4e98491fc">
+<h3 id="26c0a306-01d0-4569-86cd-7de4e98491fc">C Code for POJ 1000</h3>
+<div class="org-src-container">
+
+<pre><code class="c" data-line-numbers>    #include &lt;stdio.h&gt;
+
+    int main() {
+      int a, b;
+
+      scanf("%d %d", &amp;a, &amp;b);
+      printf("%d\n", a + b);
+      return 0;
+    }
+</code></pre>
+</div>
+
+</section>
+</section>
+<section>
+<section id="slide-81cd87f2-2115-4980-bae0-4e4230883721">
+<h3 id="81cd87f2-2115-4980-bae0-4e4230883721">C++ Code for POJ 1000</h3>
+<div class="org-src-container">
+
+<pre><code class="c++" data-line-numbers>    #include &lt;bits/stdc++.h&gt;
+
+    using namespace std;
+
+    int main() {
+      int a, b;
+
+      cin &gt;&gt; a &gt;&gt; b;
+      cout &lt;&lt; a+b &lt;&lt; endl;
+    }
+</code></pre>
+</div>
+
+</section>
+</section>
+<section>
+<section id="slide-47f2b90d-04d7-43c4-abd6-2bf25b1e9e91">
+<h3 id="47f2b90d-04d7-43c4-abd6-2bf25b1e9e91">Java Code for POJ 1000</h3>
+<div class="org-src-container">
+
+<pre><code class="java" data-line-numbers>    import java.io.*;
+    import java.util.*;
+
+    public class Main {
+      public static void main(String args[])
+      throws Exception{
+        Scanner cin=new Scanner(System.in);
+        int a=cin.nextInt(), b=cin.nextInt();
+        System.out.println(a+b);
+      }
+    }
+</code></pre>
+</div>
+
+</section>
+</section>
+<section>
+<section id="slide-3bcab99f-e91e-4ec0-b81e-f14c57882d01">
+<h3 id="3bcab99f-e91e-4ec0-b81e-f14c57882d01">Example Problem</h3>
+<ul>
+<li>POJ 1004 &#x2014; Financial Management
+<ul>
+<li>Input: 12 floating-point numbers, each on a separate line</li>
+<li>Output: Average of the numbers, rounded to two decimal places</li>
+<li>Note that the answer must be preceeded by a dollar sign (\$)!</li>
+
+</ul></li>
+
+</ul>
+
+
+</section>
+</section>
+<section>
+<section id="slide-7dd27c34-af5a-4453-a0e3-2746ffaff3ba">
+<h3 id="7dd27c34-af5a-4453-a0e3-2746ffaff3ba">C Code for POJ 1004</h3>
+<div class="org-src-container">
+
+<pre><code class="c++" data-line-numbers>    #include&lt;stdio.h&gt;
+
+    int main() {
+      double sum = 0, buf;
+      for(int i = 0; i &lt; 12; i++) {
+        scanf("%f", &amp;buf);
+        sum += buf;
+      }
+      printf("$%.2f\n", sum / 12.0);
+      return 0;
+    }
+</code></pre>
+</div>
+
+</section>
+</section>
+<section>
+<section id="slide-7d27c34-af5a-4453-a0e3-2746ffaff3ba">
+<h3 id="7d27c34-af5a-4453-a0e3-2746ffaff3ba">C Code for POJ 1004</h3>
+<div class="org-src-container">
+
+<pre><code class="c++" data-line-numbers>    #include &lt;bits/stdc++.h&gt;
+
+    using namespace std;
+
+    int main() {
+      double sum = 0, buf;
+      for(int i = 0; i &lt; 12; i++) {
+        cin &gt;&gt; buf;
+        sum += buf;
+      }
+      printf("$%.2f\n", sum / 12.0);
+      return 0;
+    }
+</code></pre>
+</div>
+
+<aside class="notes">
+<p>
+We use printf here because it&rsquo;s easier to do formatting.
+We will talk more about this in the I/O lecture.
+</p>
+
+</aside>
+
+</section>
+</section>
+<section>
+<section id="slide-c84e0386-5163-4914-aa6c-fac86f8abc6c">
+<h3 id="c84e0386-5163-4914-aa6c-fac86f8abc6c">Java Code for POJ 1004</h3>
+<div class="org-src-container">
+
+<pre><code class="java" data-line-numbers>    import java.util.*;
+
+    class Main {
+      public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        double d = 0;
+        for (int i = 0; i &lt; 12; ++i) {
+          d += in.nextDouble();
+        }
+        System.out.printf("$%.2f\n", d/12.0);
+      }
+    }
+</code></pre>
+</div>
+
+</section>
+</section>
+<section>
+<section id="slide-32721cd2-d564-42d2-b6e2-bb79907033ee">
+<h3 id="32721cd2-d564-42d2-b6e2-bb79907033ee">Course Resources</h3>
+<ul>
+<li>Course Website: <a href="https://uiuc-cs491cap.netlify.app/">https://uiuc-cs491cap.netlify.app/</a></li>
+<li>UIUC ICPC team website: <a href="http://icpc.cs.illinois.edu/">http://icpc.cs.illinois.edu/</a></li>
+<li>Course materials will be available on the website</li>
+<li>UVa Online Judge: <a href="https://onlinejudge.org">https://onlinejudge.org</a></li>
+<li>uHunt (UVa Problem Hunting Tool): <a href="https://uhunt.onlinejudge.org/">https://uhunt.onlinejudge.org/</a></li>
+
+</ul>
+
+</section>
+</section>
+<section>
+<section id="slide-a9d65bec-2215-414c-b4de-5ca716a8603e">
+<h3 id="a9d65bec-2215-414c-b4de-5ca716a8603e">Questions?</h3>
+</section>
+</section>
+</div>
+</div>
+<script src="../dist/reveal.js"></script>
+<script src="../plugin/highlight/highlight.js"></script>
+<script src="../plugin/notes/notes.js"></script>
+<script>
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+
+controls: true,
+progress: true,
+history: false,
+center: true,
+slideNumber: 'c',
+rollingLinks: false,
+keyboard: true,
+mouseWheel: false,
+fragmentInURL: false,
+hashOneBasedIndex: false,
+pdfSeparateFragments: true,
+overview: true,
+
+transition: 'none',
+transitionSpeed: 'default',
+hash:true, respond_to_hash_changes:true, max_scale:2.0, width:1200, height:900, center:false,
+
+// Plugins with reveal.js 4.x
+plugins: [ RevealHighlight, RevealNotes ],
+
+// Optional libraries used to extend reveal.js
+dependencies: [
+]
+
+});
+</script>
+</body>
+</html>

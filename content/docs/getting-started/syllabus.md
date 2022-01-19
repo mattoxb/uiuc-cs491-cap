@@ -11,17 +11,17 @@ type: book
 
   - Course Title: Introduction to Competitive Programming
   - Rubric: CS 491 CAP
-  - CRN: 65816
-  - Dates: August 23 to December 8th, 2021, Tuesdays and Thursdays
-  - Time: 12:30 &ndash; 13:45 
+  - CRN: 31584
+  - Dates: January 19 to May 4th, 2022, Mondays and Wednesdays
+  - Time: 14:00 &ndash; 15:15 
   - Location: 
-    - On Campus: 1105 Siebel Center
-    - Off Campus: Zoom (synchronous)
+    - On Campus: 1131 Siebel Center
   - Instructor: Mattox Beckman
   - Recommended Textbooks: 
      - [Competitive Programming 4](https://cpbook.org)
      - [Guide to Competitive Programming](https://link.springer.com/book/10.1007/978-3-319-72547-5)
-  - Prerequisites: ability to program is necessary; CS 225 recommended.  The course will support C++ and Python, and possibly Kotlin.
+  - Prerequisites: ability to program is necessary; CS 225 recommended.  We will use C++ for our content, but you are welcome to use
+    a different language.
   - Office Hours: tba
 
 ## Purpose

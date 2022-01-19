@@ -1,0 +1,87 @@
+@font-face {
+    font-family: "Inconsolata";
+    src: url("assets/fonts/Inconsolata-Regular.woff");
+}
+
+@font-face {
+  font-family: "Concourse Caps";
+  src: url("assets/fonts/ConcourseC3.woff");
+}
+
+@font-face {
+    font-family: "Concourse Text";
+    src: url("assets/fonts/ConcourseT3.woff");
+}
+
+
+.reveal {
+    font-family: "Concourse Text";
+    font-size: 40px;
+    font-weight: normal;
+    color: #333; }
+
+.reveal .slides {
+    text-align: left;
+}
+
+.reveal h1,
+.reveal h2,
+.reveal h3,
+.reveal h4,
+.reveal h5,
+.reveal h6 {
+    margin: 0 0 20px 0;
+    color: #333;
+    font-family: "Concourse Caps", sans-serif;
+    font-weight: normal;
+    line-height: 1.2;
+    text-shadow: none;
+    text-transform: none;
+    text-align: center;
+    word-wrap: break-word; }
+
+
+.twocolumn {
+    display: grid;
+    grid-template-areas:
+        "header header"
+        "left right"
+        "footer footer";
+    grid-gap: 10px;
+    padding: 10px;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto auto;
+
+}
+
+.left {grid-area: left;}
+.right {grid-area: right;}
+.header {grid-area: header;}
+.footer {grid-area: footer;}
+
+/* .left {
+// 	margin: 10px 0 15px 20px;
+	text-align: left;
+	float: left;
+	z-index:-10;
+	width:48%;
+}
+
+.right {
+	margin: 10px 0 15px 0;
+	float: right;
+	text-align: left;
+	z-index:-10;
+	width:48%;
+}
+
+*/
+
+.center {
+	  margin-left: auto;
+	  margin-right: auto;
+}
+
+.reveal code {
+    font-family: "Inconsolata", monospace;
+}
