@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>IO</title>
+<meta name="author" content="Mattox Beckman"/>
+<style type="text/css">
+.underline { text-decoration: underline; }
+</style>
+<link rel="stylesheet" href="../dist/reveal.css"/>
+
+<link rel="stylesheet" href="../dist/theme/beige.css" id="theme"/>
+
+<link rel="stylesheet" href="custom.css"/>
+<link rel="stylesheet" href="../plugin/highlight/zenburn.css"/>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+<section id="sec-title-slide">
+<h1 class="title">IO</h1><h2 class="author">Mattox Beckman</h2>
+</section>
+<section id="table-of-contents-section">
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#/slide-orga326cb5">Objectives</a></li>
+<li><a href="#/slide-orgae468d8">Input Scenario: Explicit Case Count</a></li>
+<li><a href="#/slide-orgdb5add6">Input Scenario: Termination Marker</a></li>
+<li><a href="#/slide-org216dca4">Test within the while loop</a></li>
+<li><a href="#/slide-org4223160">Input Scenario: EOF</a></li>
+<li><a href="#/slide-orgae6f4d9">Why use scanf and printf?</a></li>
+<li><a href="#/slide-org75c0ecc">Spaces and such&#x2026;</a></li>
+<li><a href="#/slide-org23c4e35">Getting a whole line</a></li>
+<li><a href="#/slide-org69a62c8">Setting number of digits.</a></li>
+<li><a href="#/slide-org10d9aeb">Interactive Tests</a></li>
+</ul>
+</div>
+</div>
+</section>
+
+<section>
+<section id="slide-orga326cb5">
+<h2 id="orga326cb5">Objectives</h2>
+<p>
+Your Objectives:
+</p>
+<ul>
+<li>Write input routines for three kinds of test inputs,</li>
+<li>use ‘cin‘, ‘scanf‘, and ‘printf‘ properly for various types of variables, and</li>
+<li>write code for interactive tests.</li>
+
+</ul>
+
+</section>
+</section>
+<section>
+<section id="slide-orgae468d8">
+<h2 id="orgae468d8">Input Scenario: Explicit Case Count</h2>
+<ul>
+<li>Often the input tells you explicitly how many test cases you will have.</li>
+<li>Example in C, C++</li>
+
+</ul>
+
+<div class="twocolumn" id="orgc0c54f2">
+<div class="left" id="orgb9a79ac">
+<p>
+
+</p>
+
+<div class="org-src-container">
+
+<pre><code class="C" data-line-numbers>#include &lt;stdio.h&gt;
+int main() {
+  int cases,x,y;
+  scanf("%d",&amp;cases);
+  while (cases&gt;0) {
+    --cases;
+    scanf("%d %d",&amp;x,&amp;y);
+    printf("%d\n",x+y);
+  }
+}
+</code></pre>
+</div>
+
+</div>
+<div class="right" id="orgb9a1f69">
+<p>
+
+</p>
+
+<div class="org-src-container">
+
+<pre><code class="c++" >#include &lt;bits/stdc++.h&gt;
+using namespace std;
+int main() {
+  ios_base::sync_with_stdio(false);
+  cin.tie(NULL);
+  int cases,x,y;
+  cin &gt;&gt; cases;
+  while (cases&gt;0) {
+    --cases;
+    cin &gt;&gt; x &gt;&gt; y;
+    cout &lt;&lt; x + y &lt;&lt; "\n";
+  }
+</code></pre>
+</div>
+
+</div>
+
+</div>
+
+</section>
+</section>
+<section>
+<section id="slide-orgdb5add6">
+<h2 id="orgdb5add6">Input Scenario: Termination Marker</h2>
+<ul>
+<li>Simple.  Just check for the marker and break.</li>
+
+</ul>
+
+<div class="twocolumn">
+<div class="left">
+
+<div class="org-src-container">
+
+<pre><code class="C" data-line-numbers>int main() {
+  int x,y;
+  while (1) {
+    scanf("%d %d",&amp;x,&amp;y);
+    if (x==-1 &amp;&amp; y==-1)
+      break;
+    printf("%d\n",x+y);
+  }
+}
+</code></pre>
+</div>
+
+</div>
+<div class="right">
+
+<div class="org-src-container">
+
+<pre><code class="C++" data-line-numbers>#include &lt;bits/stdc++.h&gt;
+using namespace std;
+int main() {
+  ios_base::sync_with_stdio(false);
+  cin.tie(NULL);
+  int x,y;
+  while (1) {
+    cin &gt;&gt; x &gt;&gt; y;
+    if (x==-1 &amp;&amp; y==-1)
+      break;
+    cout &lt;&lt; x + y &lt;&lt; "\n";
+  }
+}
+</code></pre>
+</div>
+</div>
+</div>
+
+</section>
+</section>
+<section>
+<section id="slide-org216dca4">
+<h2 id="org216dca4">Test within the while loop</h2>
+<div class="twocolumn">
+<div class="left">
+
+<div class="org-src-container">
+
+<pre><code class="C" data-line-numbers>int main() {
+  int x,y;
+  while (scanf("%d %d",&amp;x,&amp;y) &amp;&amp; x != 1 &amp;&amp; y != 1) {
+    printf("%d\n",x+y);
+  }
+}
+</code></pre>
+</div>
+
+</div>
+<div class="right">
+
+<div class="org-src-container">
+
+<pre><code class="C++" data-line-numbers>#include &lt;bits/stdc++.h&gt;
+using namespace std;
+int main() {
+  ios_base::sync_with_stdio(false);
+  cin.tie(NULL);
+  int x,y;
+  while (cin &gt;&gt; x &gt;&gt; y &amp;&amp; x != 1 &amp;&amp; y != 1) {
+    cout &lt;&lt; x + y &lt;&lt; "\n";
+  }
+}
+</code></pre>
+</div>
+</div>
+</div>
+
+</section>
+</section>
+<section>
+<section id="slide-org4223160">
+<h2 id="org4223160">Input Scenario: EOF</h2>
+<ul>
+<li>Two ways: test for EOF explicitly, or test for failure to read.</li>
+
+</ul>
+
+<div class="twocolumn">
+<div class="left">
+
+<div class="org-src-container">
+
+<pre><code class="C" data-line-numbers>int main() {
+  int x,y;
+  while (scanf("%d %d",&amp;x,&amp;y) != EOF) {}
+    printf("%d\n",x+y);
+  }
+}
+</code></pre>
+</div>
+
+</div>
+<div class="right">
+
+<div class="org-src-container">
+
+<pre><code class="C++" data-line-numbers>#include &lt;bits/stdc++.h&gt;
+using namespace std;
+int main() {
+  ios_base::sync_with_stdio(false);
+  cin.tie(NULL);
+  int x,y;
+  while (cin &gt;&gt; x &gt;&gt; y) {
+    cout &lt;&lt; x + y &lt;&lt; "\n";
+  }
+}
+</code></pre>
+</div>
+</div>
+</div>
+
+</section>
+</section>
+<section>
+<section id="slide-orgae6f4d9">
+<h2 id="orgae6f4d9">Why use scanf and printf?</h2>
+<ul>
+<li>There are problems that TLE if you use cin and cout.</li>
+<li>This happens if the problem requires a lot of output.</li>
+<li>Use <code>ios_base::sync_with_stdio(false)</code>; and <code>cin.tie(NULL)</code>; to prevent flushing the output. (Maybe put that in your TRD!)</li>
+<li>Similarly, <code>endl</code> will force-flush the output. Use <code>\n</code> instead.</li>
+<li><code>scanf</code> has some regular-expression like features that can be useful.</li>
+<li><p>
+On the other hand, you must match the type and pass in a reference.
+</p>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-left">Code</td>
+<td class="org-left">Meaning</td>
+</tr>
+
+<tr>
+<td class="org-left">%d</td>
+<td class="org-left">Scan an integer</td>
+</tr>
+
+<tr>
+<td class="org-left">%lld</td>
+<td class="org-left">Scan a long long integer</td>
+</tr>
+
+<tr>
+<td class="org-left">%s</td>
+<td class="org-left">Scan a string</td>
+</tr>
+
+<tr>
+<td class="org-left">%c</td>
+<td class="org-left">Scan a character</td>
+</tr>
+</tbody>
+</table></li>
+
+</ul>
+
+</section>
+</section>
+<section>
+<section id="slide-org75c0ecc">
+<h2 id="org75c0ecc">Spaces and such&#x2026;</h2>
+<ul>
+<li>Literal Characters</li>
+
+</ul>
+
+<div class="org-src-container">
+
+<pre><code class="C" >// will read "(10,20)"
+scanf("(%d,%d)");
+</code></pre>
+</div>
+
+<ul>
+<li>Spaces</li>
+
+</ul>
+
+<div class="org-src-container">
+
+<pre><code class="C" >// will read "(10,20)", "( 10, 20 )", but not "(10 ,20)"
+scanf(" ( %d, %d )");
+</code></pre>
+</div>
+
+
+<ul>
+<li>A binary followed by vowels</li>
+
+</ul>
+
+<div class="org-src-container">
+
+<pre><code class="C" >// will read "110101 eieio"
+scanf("%[01] %[aeiou]");
+</code></pre>
+</div>
+
+</section>
+</section>
+<section>
+<section id="slide-org23c4e35">
+<h2 id="org23c4e35">Getting a whole line</h2>
+<ul>
+<li><code>fgets (name, 100, stdin);</code> will read a whole line into the string.</li>
+<li><code>getline(cin, name);</code></li>
+<li><code>getline(cin &gt;&gt; std::ws, name);</code> to read leading whitespace first.</li>
+<li>Sometime you will need to parse out the line yourself afterward; this can be tricky. Avoid it if possible.</li>
+
+</ul>
+
+</section>
+</section>
+<section>
+<section id="slide-org69a62c8">
+<h2 id="org69a62c8">Setting number of digits.</h2>
+<ul>
+<li>For printf codes:
+<ul>
+<li><code>%d</code> outputs an integer</li>
+<li><code>%5d</code> outputs an integer, using 5 characters, leading spaces.</li>
+<li><code>%05d</code> outputs an integer, using 5 characters, leading zeros.</li>
+
+</ul></li>
+<li>Similar codes exist for floating point.</li>
+
+</ul>
+<div class="org-src-container">
+
+<pre><code class="C" >int n = 25;
+printf("%d, %5d, %05d\n",n,n,n);
+Output: 25, 25, 00025
+</code></pre>
+</div>
+<ul>
+<li>For <code>cout</code>, use e.g., <code>cout &lt;&lt; width(5) &lt;&lt; n &lt;&lt; "\n";</code></li>
+
+</ul>
+
+</section>
+</section>
+<section>
+<section id="slide-org10d9aeb">
+<h2 id="org10d9aeb">Interactive Tests</h2>
+<ul>
+<li>Not common yet, but ICPC is starting to use them.</li>
+<li>Opposite advice now applies: call <code>flush(stdout)</code> every time you print, or else use <code>endl</code> with <code>cout</code>.</li>
+
+</ul>
+
+<div class="org-src-container">
+
+<pre><code class="c" >#include &lt;stdio.h&gt;
+int main() {
+  int x,y;
+  while (scanf("%d %d",&amp;x,&amp;y) != EOF) {
+    if (x==-1 &amp;&amp; y==-1)
+      break;
+    printf("%d\n",x+y);
+    fflush(stdout);
+  }
+}
+</code></pre>
+</div>
+</section>
+</section>
+</div>
+</div>
+<script src="../dist/reveal.js"></script>
+<script src="../plugin/highlight/highlight.js"></script>
+<script src="../plugin/notes/notes.js"></script>
+<script>
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+
+controls: true,
+progress: true,
+history: false,
+center: true,
+slideNumber: 'c',
+rollingLinks: false,
+keyboard: true,
+mouseWheel: false,
+fragmentInURL: false,
+hashOneBasedIndex: false,
+pdfSeparateFragments: true,
+overview: true,
+
+transition: 'none',
+transitionSpeed: 'default',
+hash:true, respond_to_hash_changes:true, max_scale:2.0, width:1200, height:900, center:false,
+
+// Plugins with reveal.js 4.x
+plugins: [ RevealHighlight, RevealNotes ],
+
+// Optional libraries used to extend reveal.js
+dependencies: [
+]
+
+});
+</script>
+</body>
+</html>

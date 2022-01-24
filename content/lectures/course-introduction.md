@@ -9,7 +9,7 @@ icon_pack: fas
 # Page metadata.
 title: Course Introduction
 date: "2021-08-17T00:00:00Z"
-type: book 
+type: book
 
 links:
    - category: In-Class Problems
