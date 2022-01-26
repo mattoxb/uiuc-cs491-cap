@@ -9,8 +9,8 @@ icon_pack: fas
 # Page metadata.
 title: Arrays and Vectors
 date: "2021-08-17T00:00:00Z"
-lecturedate: "2021-08-31T12:30:00Z"
-type: page 
+type: book
+
 links:
    - category: In-Class Problems
      links:
@@ -31,3 +31,5 @@ Note that C++ has a `vector` class, and it is pretty efficient.
 ## Recommended Reading
  - [Geeksforgeeks Vectors in CPP Page](https://www.geeksforgeeks.org/vector-in-cpp-stl/)
  - Competitive Programming chapter 2, first sections.
+
+{{<links>}}
