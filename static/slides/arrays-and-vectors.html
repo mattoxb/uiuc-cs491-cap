@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Arrays and Vectors</title>
+<meta name="author" content="Mattox Beckman"/>
+<style type="text/css">
+.underline { text-decoration: underline; }
+</style>
+<link rel="stylesheet" href="../dist/reveal.css"/>
+
+<link rel="stylesheet" href="../dist/theme/beige.css" id="theme"/>
+
+<link rel="stylesheet" href="custom.css"/>
+<link rel="stylesheet" href="../plugin/highlight/zenburn.css"/>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+<section id="sec-title-slide">
+<h1 class="title">Arrays and Vectors</h1><h2 class="author">Mattox Beckman</h2>
+</section>
+<section id="table-of-contents-section">
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#/slide-org3d9c432">Objectives</a></li>
+<li><a href="#/slide-org852aa29">C-Style Arrays</a></li>
+<li><a href="#/slide-orged272df">C-Style Arrays, initialization</a></li>
+<li><a href="#/slide-org98a3c6b">Vectors</a></li>
+<li><a href="#/slide-orga308065">Vector initializations</a></li>
+</ul>
+</div>
+</div>
+</section>
+
+<section>
+<section id="slide-org3d9c432">
+<h2 id="org3d9c432">Objectives</h2>
+<ul>
+<li>Be able to describe the differences between C-style arrays and Vectors</li>
+<li>Use built-in methods to manipulate C++ Vectors</li>
+
+</ul>
+
+</section>
+</section>
+<section>
+<section id="slide-org852aa29">
+<h2 id="org852aa29">C-Style Arrays</h2>
+<ul>
+<li>A C-style array is simply a block of contiguous memory.</li>
+<li>First element is always 0.</li>
+<li>Note the <code>&lt;</code> in the <code>for</code> loop.  If you put <code>&lt;=</code> you will certainly have touble!
+<ul>
+<li>If you get a &ldquo;runtime error&rdquo; from the judge, check for that.</li>
+
+</ul></li>
+<li>Access an element by index with brackets: \({\cal O}(1)\) time.  Very fast!
+<ul>
+<li>If you have to &ldquo;look for&rdquo; an element, it&rsquo;s \({\cal O}(n)\) time.  Use with caution.</li>
+
+</ul></li>
+
+</ul>
+
+<div class="org-src-container">
+
+<pre><code class="C" data-line-numbers>int arr[100];
+int i;
+
+for(i=0; i&lt;100; ++i) {
+   arr[i] = i * 10;
+ }
+</code></pre>
+</div>
+
+</section>
+</section>
+<section>
+<section id="slide-orged272df">
+<h2 id="orged272df">C-Style Arrays, initialization</h2>
+<ul>
+<li>You can initialize arrays inline in C if you need to.</li>
+<li>Note that uninitialized items are <b>undefined</b>!
+<ul>
+<li>You don&rsquo;t have to initialize right away, but you have to before you use it!</li>
+
+</ul></li>
+
+</ul>
+
+<div class="org-src-container">
+
+<pre><code class="C" data-line-numbers>int foo[10] = {8,6,7,5,3,0,9};
+char suits[4] = "SHCD"; // Spades, Hearts, Clubs, Diamonds
+</code></pre>
+</div>
+
+</section>
+</section>
+<section>
+<section id="slide-org98a3c6b">
+<h2 id="org98a3c6b">Vectors</h2>
+<ul>
+<li>Vectors in C++ are awesome.  Use them unless you have good reason not to.
+<ul>
+<li>They can grow dynamically!  No need to determine the proper size in advance.</li>
+<li>Many iterators to provide traversals.</li>
+<li>Reasonable default initialization.</li>
+<li>Use <code>push_back</code> to insert an element at the end.
+<ul>
+<li>Inserting at the beginning is slow!  Don&rsquo;t do it!</li>
+
+</ul></li>
+
+</ul></li>
+
+</ul>
+
+<div class="org-src-container">
+
+<pre><code class="C++" data-line-numbers>vector&lt;int&gt; foo;
+
+for(int i=0; i&lt;N; ++i) {
+ cin &gt;&gt; data;
+ foo.push_back(data);
+}
+</code></pre>
+</div>
+
+</section>
+</section>
+<section>
+<section id="slide-orga308065">
+<h2 id="orga308065">Vector initializations</h2>
+<ul>
+<li>The constructor can initialize the vector for you.
+<ul>
+<li>One argument \(n\): \(n\) instances of the default.</li>
+<li>Two arguments \(n\) and \(x\): \(n\) copies of \(x\).</li>
+
+</ul></li>
+
+</ul>
+
+<div class="org-src-container">
+
+<pre><code class="C++" data-line-numbers>vector&lt;int&gt; foo(100);
+vector&lt;int&gt; foo(500,123);
+
+</code></pre>
+</div>
+</section>
+</section>
+</div>
+</div>
+<script src="../dist/reveal.js"></script>
+<script src="../plugin/highlight/highlight.js"></script>
+<script src="../plugin/notes/notes.js"></script>
+<script>
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+
+controls: true,
+progress: true,
+history: false,
+center: true,
+slideNumber: 'c',
+rollingLinks: false,
+keyboard: true,
+mouseWheel: false,
+fragmentInURL: false,
+hashOneBasedIndex: false,
+pdfSeparateFragments: true,
+overview: true,
+
+transition: 'none',
+transitionSpeed: 'default',
+hash:true, respond_to_hash_changes:true, max_scale:2.0, width:1200, height:900, center:false,
+
+// Plugins with reveal.js 4.x
+plugins: [ RevealHighlight, RevealNotes ],
+
+// Optional libraries used to extend reveal.js
+dependencies: [
+]
+
+});
+</script>
+</body>
+</html>
