@@ -4,11 +4,16 @@ course-introduction:
   slug: course-introduction
 
 io:
-  date: 2022-02-24
+  date: 2022-01-24
   title: IO
   slug: io
 
 arrays-and-vectors:
-  date: 2022-02-26
+  date: 2022-01-26
   title: Arrays and Vectors
   slug: arrays-and-vectors
+
+stacks-and-queues:
+  date: 2022-01-26
+  title: Stacks and Queues
+  slug: stacks-and-queues
