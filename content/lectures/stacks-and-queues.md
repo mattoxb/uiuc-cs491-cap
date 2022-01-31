@@ -19,7 +19,7 @@ links:
    - category: In-Class Problems
      links:
        - uva: 11998
-         display: false
+         display: true
 ---
 
 ## Synopsis
