@@ -14,7 +14,7 @@ type: book
 links:
    - category: In-Class Problems
      links:
-       - uva: 484
+       - uva: 543
          display: true
    - category: Slides
      links:
