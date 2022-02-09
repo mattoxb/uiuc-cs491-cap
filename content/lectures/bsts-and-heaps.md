@@ -32,7 +32,7 @@ More built-in libraries for you!  This time we have `map`, `set`, and
 
 ## Video
 
- - [BSTs and Heaps]({{% ref "/videos/bsts-and-heaps" %}})
+ - No video.
 
 ## Recommended Reading
 
