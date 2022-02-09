@@ -22,3 +22,8 @@ prime-numbers:
   date: 2022-02-07
   title: Prime Numbers
   slug: prime-numbers
+
+bsts-and-heaps:
+  date: 2022-02-09
+  title: BSTs and Heaps
+  slug: bsts-and-heaps
