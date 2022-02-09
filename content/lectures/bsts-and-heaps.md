@@ -10,7 +10,19 @@ icon_pack: fas
 title: Map, Set, Priority Queue
 date: "2021-08-17T00:00:00Z"
 lecturedate: "2021-09-28T12:30:00Z"
-type: page
+type: book
+
+links:
+   - category: In-Class Problems
+     links:
+       - uva: 11286
+         display: true
+   - category: Slides
+     links:
+       - title: IO
+         url: /slides/bsts-and-heaps.html
+         display: false
+
 ---
 
 ## Synopsis
@@ -29,6 +41,4 @@ More built-in libraries for you!  This time we have `map`, `set`, and
  - [C++ `set` reference](http://www.cplusplus.com/reference/set/set/)
  - [C++ `priority_queue` reference](http://www.cplusplus.com/reference/set/set/)
 
-## Problem
-
- - {{< UVa id="2261" name="11286 - Conformity" >}}
+{{<links>}}
