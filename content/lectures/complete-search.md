@@ -10,7 +10,16 @@ icon_pack: fas
 title: Complete Search
 date: "2021-08-17T00:00:00Z"
 lecturedate: "2021-09-09T12:30:00Z"
-type: page 
+type: book
+
+
+links:
+   - category: Problems
+     links:
+       - uva: 725
+         display: true
+       - uva: 750
+         display: false
 ---
 
 ## Synopsis
@@ -25,7 +34,5 @@ Sometimes the only thing you can do is try all the possibilities....
 
   - [Complete Search]({{% ref "/videos/complete-search" %}})
 
-## Problem
 
-  - {{<UVa id="666" name="725 - Division" >}}
-  - {{<UVa id="691" name="750 - 8 Queens Chess Problem" >}}
+{{<links>}}
