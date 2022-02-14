@@ -19,7 +19,7 @@ links:
        - uva: 725
          display: true
        - uva: 750
-         display: false
+         display: true
 ---
 
 ## Synopsis
