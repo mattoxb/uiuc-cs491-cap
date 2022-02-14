@@ -24,7 +24,7 @@ links:
          url: /videos/divide-and-conquer
          display: true
        - title: The Sorcerer's Apprentics
-         url: https://video.disney.com/watch/sorcerer-s-apprentice-fantasia-4ea9ebc01a74ea59a5867853) 
+         url: https://video.disney.com/watch/sorcerer-s-apprentice-fantasia-4ea9ebc01a74ea59a5867853 
          description: A warning that divide and conquer doesn't always go like you think it will. 
          display: true
 ---
