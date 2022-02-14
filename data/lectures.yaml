@@ -32,3 +32,8 @@ complete-search:
   date: 2022-02-14
   title: Complete search
   slug: complete-search
+
+divide-and-conquer:
+  date: 2022-02-16
+  title: Divide and Conquer
+  slug: divide-and-conquer
