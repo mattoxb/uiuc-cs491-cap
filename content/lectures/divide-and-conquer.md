@@ -18,6 +18,10 @@ links:
      links:
        - uva: 11935
          display: true
+   - category: In-Class Problems
+     links:
+       - uva: 10077
+         display: true
    - category: Videos
      links:
        - title: Divide and Conquer
