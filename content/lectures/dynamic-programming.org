@@ -1,0 +1,27 @@
+---
+linktitle: Dynamic Programming
+weight: 2
+icon: book
+icon_pack: fas
+
+# Page metadata.
+title: Dynamic Programming
+date: "2021-08-17T00:00:00Z"
+type: book
+
+links:
+   - category: Problems
+     links:
+     - uva: 11517
+       description: Try this before class.
+       display: true
+---
+
+** Synopsis
+
+...and sometimes greed doesn't work.
+
+** Video
+[[({{% ref "/videos/dynamic-programming" %}})][Dynamic Programing]]
+
+{{<links>}}
