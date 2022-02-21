@@ -1,0 +1,34 @@
+---
+# Title, summary, and page position.
+linktitle: Greedy Algorithms
+weight: 2
+icon: book
+icon_pack: fas
+
+# Page metadata.
+title: Greedy Algorithms
+date: "2021-08-17T00:00:00Z"
+type: book
+
+
+links:
+   - category: Problems
+     links:
+     - uva: 10718
+       description: Try this before class.
+       display: true
+     - uva: 12321
+       description: We'll do this in class.
+       display: true
+---
+
+** Synopsis
+
+A nice class of algorithm that you can solve simply by doing what it optimal locally.
+Sometimes greed does work!
+
+** Video
+
+ - [[{{% ref "/videos/greedy-algorithms" %}}][Greedy Algorithms]]
+
+{{<links>}}

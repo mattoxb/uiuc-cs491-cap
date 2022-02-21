@@ -12,7 +12,8 @@
                {{ $id := (index $problem "id") }}
                {{ $name := (index $problem "name") }}
 
-        <li><a href="https://onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&page=show_problem&problem={{$id}}"> {{ $number }} - {{ $name }} </a></li>
+      <li><a href="https://onlinejudge.org/index.php?option=onlinejudge&Itemid=8&page=show_problem&problem={{$id}}"> {{ $number }} - {{ $name }} </a>
+              {{ (index $link "description") }}</li>
             {{ end }}
           {{ if (index $link "title") }}
           <li> <a href={{ (index $link "url") }}>{{ (index $link "title") }} </a>

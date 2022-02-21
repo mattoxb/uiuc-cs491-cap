@@ -37,3 +37,8 @@ divide-and-conquer:
   date: 2022-02-16
   title: Divide and Conquer
   slug: divide-and-conquer
+
+greedy-algorithms:
+  date: 2022-02-21
+  title: Greedy Algorithms
+  slug: greedy-algorithms
