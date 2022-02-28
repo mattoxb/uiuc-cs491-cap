@@ -18,9 +18,9 @@ links:
      - uva: 11991
        description: Try this before class.
        display: true
-     - uva: 12321
+     - url: https://codeforces.com/contest/1384/problem/C
        description: We'll do this in class.
-       display: false
+       display: true
 ---
 
 ** Synopsis
