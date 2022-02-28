@@ -19,6 +19,7 @@ links:
        description: Try this before class.
        display: true
      - url: https://codeforces.com/contest/1384/problem/C
+       title: Code Forces Round 659 C - String Transformation 1
        description: We'll do this in class.
        display: true
 ---
