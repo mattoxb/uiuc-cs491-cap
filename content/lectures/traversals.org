@@ -14,7 +14,7 @@ type: page
 links:
    - category: Problems
      links:
-     - uva: 3104
+     - uva: 11953
        description: Try this before class.
        display: true
      - uva: 12321
@@ -33,3 +33,4 @@ links:
 
  - Competitive Programming 4, 4.2.2 -- 4.2.3
 
+{{<links>}}
