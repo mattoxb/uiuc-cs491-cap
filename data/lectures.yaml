@@ -47,3 +47,13 @@ dynamic-programming:
   date: 2022-02-23
   title: Dynamic Programming
   slug: dynamic-programming
+
+basic-graphs:
+  date: 2022-02-28
+  title: Basic Graphs
+  slug: basic-graphs
+
+traversals:
+  date: 2022-03-02
+  title: Traversals
+  slug: traversals

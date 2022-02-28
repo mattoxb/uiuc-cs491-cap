@@ -9,24 +9,31 @@ icon_pack: fas
 # Page metadata.
 title: Traversals
 date: "2021-08-17T00:00:00Z"
-lecturedate: "2021-10-12T12:30:00Z"
 type: page
+
+
+links:
+   - category: Problems
+     links:
+     - uva: 3104
+       description: Try this before class.
+       display: true
+     - uva: 12321
+       description: We'll do this in class.
+       display: false
+
+
 ---
 
-## Synopsis
+** Synopsis
 
   We will talk about DFS and BFS, and some problems you can solve with it:
     - Connected Components
     - Flood Fill
     - Topological Sort
 
-  - [Video](https://mediaspace.illinois.edu/media/t/1_686vmrld)
-
-## Recommended Reading
+** Recommended Reading
 
  - Competitive Programming 4, 4.2.2 -- 4.2.3
 
-## Problem
-
- - {{<UVa id="3104" name="11953 - Battleships" >}}
-
+{{<links>}}
