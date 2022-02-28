@@ -11,7 +11,6 @@ title: Traversals
 date: "2021-08-17T00:00:00Z"
 type: page
 
-
 links:
    - category: Problems
      links:
@@ -21,8 +20,6 @@ links:
      - uva: 12321
        description: We'll do this in class.
        display: false
-
-
 ---
 
 ** Synopsis
@@ -36,4 +33,3 @@ links:
 
  - Competitive Programming 4, 4.2.2 -- 4.2.3
 
-{{<links>}}
