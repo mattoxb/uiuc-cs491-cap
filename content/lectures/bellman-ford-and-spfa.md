@@ -2,10 +2,9 @@
 title = "Bellman Ford and Shortest Path Fast Algorithm"
 author = ["Mattox Beckman"]
 draft = false
-type = "page"
 +++
 
-{{< awsvideo slug="bellman-ford-and-spfa" >}}
+{{% awsvideo slug="bellman-ford-and-spfa" %}}
 
 
 ## Transcript {#transcript}

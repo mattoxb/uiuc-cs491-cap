@@ -1,33 +1,21 @@
----
-# Title, summary, and page position.
-linktitle: Dijkstra's Algorithm
-summary: 
-weight: 2
-icon: video
-icon_pack: fas
++++
+title = "Dijkstra's Algorithm"
+author = ["Mattox Beckman"]
+draft = false
+type = "page"
++++
 
-# Page metadata.
-title: Dijkstra's Algorithm
-date: "2021-08-17T00:00:00Z"
-type: page  # Do not modify.
----
+{{< awsvideo slug="dijkstra-shortest-path" >}}
 
-{{% awsvideo slug="dijkstra-shortest-path" %}}
 
-## Transcript
-
-# Dijkstra's Algorithm
-
-Hello, and welcome to competitive programming.
-Today we are going to go over Dijkstra's algorithm.
-
-## Objectives
+## Objectives {#objectives}
 
 The objective is to implement Dijkstra to solve a single-source shortest
 path problem.  The version we will use here will work with unmodified C++
 priority queues.
 
-## The Algorithm
+
+## The Algorithm {#the-algorithm}
 
 You use Dijkstra's algorithm when you have a weighted graph.  It can be directed
 or undirected, though it's more common to see it with a directed graph.  If you use
@@ -45,7 +33,7 @@ We will start off by pushing a pair into the queue: the source node `a` and its 
 
 In the main loop we dequeue `a` and check all of its edges.  The operation we perform is
 called "relaxing".  We add the current node distance to the edge and see if that is smaller
-than the neighbor's current distance.  So in this case we are looking at `b` from `a`.  `b` 
+than the neighbor's current distance.  So in this case we are looking at `b` from `a`.  `b`
 started with weight infinity, and 0 plus 2 is less than infinity, so we update the node `b`'s
 distance to 2, and put `b/2` into the priority queue.
 
@@ -93,7 +81,6 @@ happens here.
 
 We dequeue `e/8`, and update `g`.
 
-
 There are three things left on the queue.  The `d/10` entry will be ignored since the 10
 in larger than the current weight.  The `f` and `g` entries also will not change anything.
 
@@ -101,7 +88,8 @@ in larger than the current weight.  The `f` and `g` entries also will not change
 
 So here is the completed MST.
 
-## Implementation
+
+## Implementation {#implementation}
 
 Here is the implementation.  As always, after studying this be sure you can write it yourself
 quickly.
@@ -126,5 +114,3 @@ previously recorded.  If we find a shorter path, we update the neighbor and add 
 the queue.
 
 And that's it for Dijkstra!
-
-

@@ -57,3 +57,13 @@ traversals:
   date: 2022-03-02
   title: Traversals
   slug: traversals
+
+sssp:
+  date: 2022-03-07
+  title: Single Source Shortest Path
+  slug: sssp
+
+apsp:
+  date: 2022-03-09
+  title: All-pairs Shortest Path
+  slug: apsp

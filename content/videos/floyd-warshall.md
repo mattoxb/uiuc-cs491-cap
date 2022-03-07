@@ -1,42 +1,33 @@
----
-# Title, summary, and page position.
-linktitle: The Floyd Warshall Algorithm 
-summary: 
-weight: 2
-icon: video
-icon_pack: fas
++++
+title = "Floyd Warshall"
+author = ["Mattox Beckman"]
+draft = false
+type = "page"
++++
 
-# Page metadata.
-title: The Floyd Warshall Algorithm 
-date: "2021-08-17T00:00:00Z"
-type: page  # Do not modify.
----
-
-{{% awsvideo slug="floyd-warshall" %}}
-
-## Transcript
-
-# Floyd Warshall's Algorithm for All Pairs Shortest Path
+{{< awsvideo slug="floyd-warshall" >}}
 
 Hello, and welcome to competitive programming.
 Today we are going to talk about Floyd Warshall's algorithm to find the shortest
 paths between every pair of vertices.
 
-## Objectives
+
+## Objectives {#objectives}
 
 Your objectives are to be able to implement the Floyd Warshall algorithm,
 to know the upper limit of the graph size for which this will work, and
 some of the problems that this algorithm can solve.
 
-## The Algorithm
+
+## The Algorithm {#the-algorithm}
 
 To use this algorithm, we need an adjacency matrix, which you
 remember is a two dimensional array representing
-the graph.  
+the graph.
 
 When the algorithm starts the matrix will have zeros down the diagonal and
 entries for the direct edges in the graph. All the other entries will be marked
-as infinite. We'll use a number like \(10^9\) to mean infinity.
+as infinite. We'll use a number like \\(10^9\\) to mean infinity.
 
 Now we have a triple nested loop. Notice the order of the indices, k, i, j. The
 basic idea is that k will be an intermediate node, and we will loop over all
@@ -49,7 +40,7 @@ record the best path we find.
 
 We'll go over an example in a minute, but here's what you should notice right
 away. First, the code is dead simple. Four lines of code pretty much does it.
-But second, it runs in order \(V^3\) time. Practically speaking, that means this
+But second, it runs in order \\(V^3\\) time. Practically speaking, that means this
 code will not be usable in a contest if the number of vertices is above 500. If
 in doubt, create a test case of maximal size and see if your code runs in the
 required time limit.
@@ -62,7 +53,8 @@ to implement Dijkstra or the Fast Algorithm.
 
 So now that you've memorized this code, let's look at an example run.
 
-## Sample Run
+
+## Sample Run {#sample-run}
 
 We'll start with this graph. We make an adjacency matrix, setting the diagonal
 to zero and the incident edges to their respective weights.
@@ -71,6 +63,7 @@ Now, the first run of the k loop is going to have k=0, so that means we are goin
 for every path that has 0 as an intermediate node.
 
 For this graph, there are three paths like that, all starting from the edge 5-0 of weight
+
 1.  (next)
 
 These are 5-0, 0-1; 5-0, 0-2; and 5-0, 0-3.  Notice how all the paths have length 2.
@@ -90,7 +83,8 @@ As k keeps looping, we are able to combine shortest path results from longer and
 paths.  After a k loop is done, the array will have the shortest paths found for each
 pair of nodes that could have nodes k and below as intermediate nodes.
 
-## Applications
+
+## Applications {#applications}
 
 Here is one possible modification.  If you need to be able to produce the shortest
 path, you will need to keep a parent array.  Here's the code to do that.
@@ -101,5 +95,3 @@ best match is found.
 
 Finally, we have a recursive function printPath that will traverse the parent
 array to emit the path.
-
-

@@ -1,27 +1,17 @@
----
-# Title, summary, and page position.
-linktitle: BFS Shortest Path 
-summary: Yet another use for BFS!
-weight: 2
-icon: video
-icon_pack: fas
++++
+title = "BFS Shortest Path"
+author = ["Mattox Beckman"]
+draft = false
+type = "page"
++++
 
-# Page metadata.
-title: BFS Shortest Path 
-date: "2021-08-17T00:00:00Z"
-type: page  # Do not modify.
----
-
-{{% awsvideo slug="bfs-shortest-path" %}}
-
-## Transcript
-
-# BFS for SSSP
+{{< awsvideo slug="bfs-shortest-path" >}}
 
 Hello, and welcome to competitive programming.  Today we are going to talk
 about single source shortest path.
 
-## Objectives
+
+## Objectives {#objectives}
 
 A single source shortest path means we have one node we consider a root
 or a source, and we want to find the shortest path from that source
@@ -31,7 +21,8 @@ this, depending on the circumstances.
 Your objective for this video is to implement the BFS shortest path algorithm
 for unweighted graphs.
 
-## The Algorithm
+
+## The Algorithm {#the-algorithm}
 
 If our graph is unweighted, we can use an augmented breadth first search
 to generate a shortest path spanning tree.  You will want to keep
@@ -44,7 +35,8 @@ Minus one actually serves as a pretty good infinity here, since in this
 situation we can't get negative distances.
 
 Then we put the root `a` into a queue and initialize it's distance to
-0.
+
+1.
 
 (next)
 
@@ -77,7 +69,8 @@ path from the root to a node.
 
 Now lets look at the implementation.
 
-## Implementation
+
+## Implementation {#implementation}
 
 This is very similar to the BFS code you've seen before, we just add
 a couple lines.
@@ -101,7 +94,6 @@ vector.
 If the distance array has infinity for that node, it means we haven't
 visited it yet, so we update its distance,
 update the parent, and push the neighbor into the queue.
-
 
 That's it for this algorithm.  If the edges happen to be weighted,
 this algorithm is not going to work.  You'll have to use Dijkstra's

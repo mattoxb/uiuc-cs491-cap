@@ -1,0 +1,455 @@
+#+HUGO_BASE_DIR: .
+#+HUGO_SECTION: lectures
+
+* Lecture
+:PROPERTIES:
+:EXPORT_HUGO_CUSTOM_FRONT_MATTER: :type page
+:EXPORT_HUGO_SECTION: lectures
+:END:
+
+** Single Source Shortest Path
+:PROPERTIES:
+:ID:       363ab34d-14b4-4c35-921f-6e2f9f91aa92
+:EXPORT_FILE_NAME: sssp
+:END:
+
+*** Synopsis
+
+A single source shortest path algorithm discovers the shortest paths
+between a single node and all the other nodes.  There are three algorithms
+that can do this, depending on the situation.
+
+  - Unweighted graphs use BFS
+  - Weighted graphs with no negative edges use Dijkstra's algoritm
+  - Weighted graphs with negative edges use the Bellman Ford algorithm.
+
+*** Videos
+
+  - [[/videos/bfs-shortest-path][BFS for Shortest Path]]
+  - [[/videos/dijkstra-shortest-path][Dijkstra's Algorithm]]
+  - [[/videos/bellman-ford-and-spfa][Bellman-Ford and SPFA]]
+
+*** Recommended Reading
+
+  - Competitive Programming 4, section 4.4
+
+*** Problems
+
+  - @@hugo:{{<UVa id="370" name="429 - Word Transformation" >}}@@
+
+** All Pairs Shortest Path
+:PROPERTIES:
+:ID:       c2e71017-d7c5-4081-8a8a-a028e8395430
+:EXPORT_FILE_NAME: apsp
+:END:
+
+*** Synopsis
+
+An all pairs shortest path algorithm discovers the shortest paths
+between all nodes in the graph.  The main algorithm to do this
+is Floyd Warshall.
+
+*** Video
+
+  - [[/videos/floyd-warshall][Floyd-Warshall]]
+
+*** Recommended Reading
+
+  - Competitive Programming 4, section 4.5
+
+*** Problem
+
+  - @@hugo:{{<UVa id="762" name="821 - Page Hopping" >}}@@
+
+* Videos
+:PROPERTIES:
+:EXPORT_HUGO_CUSTOM_FRONT_MATTER: :type page
+:EXPORT_HUGO_SECTION: videos
+:END:
+** BFS Shortest Path
+:PROPERTIES:
+:EXPORT_FILE_NAME: bfs-shortest-path
+:END:
+
+@@hugo:{{< awsvideo slug="bfs-shortest-path" >}}@@
+
+Hello, and welcome to competitive programming.  Today we are going to talk
+about single source shortest path.
+
+*** Objectives
+
+A single source shortest path means we have one node we consider a root
+or a source, and we want to find the shortest path from that source
+to all the other nodes.  There are several algorithms that handle
+this, depending on the circumstances.
+
+Your objective for this video is to implement the BFS shortest path algorithm
+for unweighted graphs.
+
+*** The Algorithm
+
+If our graph is unweighted, we can use an augmented breadth first search
+to generate a shortest path spanning tree.  You will want to keep
+an array of distances and an array of parents.
+If you only need the distance and not the path itself, you can skip
+the parent array.
+
+To start, you can initialize the distance array to all infinity.
+Minus one actually serves as a pretty good infinity here, since in this
+situation we can't get negative distances.
+
+Then we put the root =a= into a queue and initialize it's distance to
+0.
+
+(next)
+
+We now go though the BFS steps.  We dequeue =a=, and add
+nodes =b=, =c=, and =d= to the queue.  At the same time we set
+their distances to 1 and their parent to =a=.
+
+(next)
+
+Next we dequeue =b= and add =e= to the queue.  =e= has distance 2
+and parent =b=.
+
+(next)
+
+Next we dequeue =c= and add =f= to the queue.  =f= has distance 2
+and parent =c=.
+
+(next)
+
+Next we dequeue =d=.  All it's neighbors have been visited already,
+so nothing happens.
+
+(next)
+
+Finally, we dequeue =e=.  This sets =g='s distance to 3 and its parent
+to =e=.
+
+Notice how we have a nice spanning tree, with all the edges on a shortest
+path from the root to a node.
+
+Now lets look at the implementation.
+
+*** Implementation
+
+This is very similar to the BFS code you've seen before, we just add
+a couple lines.
+
+First we create a distance vector, and initializes source =s=
+distance to 0.
+
+Next we create a queue and enqueues =s=.
+
+Then we create an integer vector for the parents.
+
+Now we enter the main loop.
+
+Line 4 pops the head of queue into =u=.
+
+We then loop over =u='s neighbors.
+
+For each neighbor, we set =v= to be the entry in the adjacency
+vector.
+
+If the distance array has infinity for that node, it means we haven't
+visited it yet, so we update its distance,
+update the parent, and push the neighbor into the queue.
+
+That's it for this algorithm.  If the edges happen to be weighted,
+this algorithm is not going to work.  You'll have to use Dijkstra's
+algorithm or Bellman Ford instead.
+
+** Dijkstra's Algorithm
+:PROPERTIES:
+:EXPORT_FILE_NAME: dijkstra-shortest-path
+:END:
+
+@@hugo:{{< awsvideo slug="dijkstra-shortest-path" >}}@@
+
+*** Objectives
+
+The objective is to implement Dijkstra to solve a single-source shortest
+path problem.  The version we will use here will work with unmodified C++
+priority queues.
+
+*** The Algorithm
+
+You use Dijkstra's algorithm when you have a weighted graph.  It can be directed
+or undirected, though it's more common to see it with a directed graph.  If you use
+this with an undirected graph, you may need to keep track of the parents so you don't
+loop back to a parent from a child node, but this can be safely omitted if you don't
+have negative edges in your graph.
+
+To start off, create a distance array and parent array like we did in the BST algorithm.
+But this time we also initialize a priority queue.
+
+We will start off by pushing a pair into the queue: the source node =a= and its distance
+=0=.
+
+(next)
+
+In the main loop we dequeue =a= and check all of its edges.  The operation we perform is
+called "relaxing".  We add the current node distance to the edge and see if that is smaller
+than the neighbor's current distance.  So in this case we are looking at =b= from =a=.  =b=
+started with weight infinity, and 0 plus 2 is less than infinity, so we update the node =b='s
+distance to 2, and put =b/2= into the priority queue.
+
+(next)
+
+Similarly, we look at the edge to =c= and relax it, and enqueue =c/4=.
+
+(next)
+
+Finally for =a=, we look at the edge to =d=, and relax it to =d/10=.
+
+This accounts for all the edges incident to =a=, so we dequeue the next node =b=.
+
+(next)
+
+The first edge visited this time was the edge from =b= to =d=.  =d='s distance started
+as 10, but now it decreases to 7.  We will now add =d/7= to the priority queue.  Notice that
+the =d/10= entry is still in there!  The way we handle it is this: when we dequeue
+a node, we check if the current weight in the graph is identical to what came out of the
+queue.  If it is, we process the edges as normal.  If the current weight is lower, then we
+know that this queue entry is obsolete, so we ignore it.
+
+This is called lazy deleting.
+
+In a more classic version of the algorithm we would update the item in the queue, but the
+C++ standard library priority queue lacks the ability to do this.  Rather that reimplement
+priority queues, we use lazy deleting instead.
+
+Now let's look at the edge from =b= to =e=.
+
+(next)
+
+This edge sets the distance to =e= to 8.
+
+(next)
+
+Dequeuing =c=, we set =f= to 11.
+
+(next)
+
+We now dequeue =d/7=.  Looking at all the edges, none of them change anything, so nothing
+happens here.
+
+(next)
+
+We dequeue =e/8=, and update =g=.
+
+
+There are three things left on the queue.  The =d/10= entry will be ignored since the 10
+in larger than the current weight.  The =f= and =g= entries also will not change anything.
+
+(next)
+
+So here is the completed MST.
+
+*** Implementation
+
+Here is the implementation.  As always, after studying this be sure you can write it yourself
+quickly.
+
+We create a distance array =dist= and initialize it to infinities.  From reading the problem
+statement you will be able to come up with a number large enough to be safe.
+
+Next we create a priority queue over integer pairs.  The second template argument says we
+want a vector of integer pairs for our container, and the third argument says we want to
+use pair comparison to determine priority.
+
+We push the source node onto the queue.
+
+In the main loop, we pop off the front.  The first element of the pair is the distance,
+which we call =d=, and the second is the node index, which we call =u=.
+
+The next line handles the lazy delete, checking if the distance has decreased since this
+element was added to the queue.
+
+Finally, we visit all the neighbors, comparing the distance through this node to the distance
+previously recorded.  If we find a shorter path, we update the neighbor and add it to
+the queue.
+
+And that's it for Dijkstra!
+
+** Bellman Ford and Shortest Path Fast Algorithm
+:PROPERTIES:
+:EXPORT_FILE_NAME: bellman-ford-and-spfa
+:END:
+
+@@hugo:{{< awsvideo slug="bellman-ford-and-spfa" >}}@@
+
+*** Transcript
+
+Today we will talk about the Bellman Ford algorithm and an
+optimization called Shortest Path Fast Algorithm.
+
+*** Objectives
+
+Your objectives are to be able to describe why we need these algorithms and
+to be able to implement them.
+
+*** Normal Dijstra.
+
+As a review, look at this graph from the Dijkstra lecture.  I've modified
+it just a bit so that the example will be more interesting.  You should pause
+the video and work out what Dijkstra's algorithm would do to this graph.
+Resume when you are ready.
+
+Right.  So here is the graph and the MST that Dijkstra would produce.
+
+Now we are going to introduce a wrinkle: we are going to change one of these
+edges to make it negative.
+
+*** Negative Edge Dijkstra.
+
+The =d-f= edge is negative now, at -6, and for good measure I made the =f-c=
+edge to be 1.  Try doing Dijkstra's algorithm on this graph and see what happens.
+Resume when you are ready.
+
+Here's the final result.  You noticed that the =c= node got updated as a result
+of the negative edge.  Since the edge from =c= to =f= is greater than 4, we don't
+end up updating =d= as a result, so the algorithm terminates.
+
+*** Negative Cycle Dijkstra
+
+Now let's go crazy.  The nodes =c=, =d=, and =f= are part of a cycle of negative
+weight.  Try Dijkstra on this and see what happens.  Resume when you are ready.
+
+So, we were able to get good distances on some of the nodes, but the =c-d-f= cycle
+would cause Dijkstra to loop forever.
+
+So, if there is a possibility of a negative cycle, then Dijstra is not a good idea.
+The classic algorithm for this is called Bellman Ford.
+
+*** Bellman Ford implementation
+
+Here is the code for Bellman Ford.  I don't think you actually need an animation
+for it.  The idea is simple: for every vertex in the graph, we relax
+*every single edge*.  Any paths that are valid will have correct answers, and
+nodes that are part of negative cycles will have what amounts to garbage in them.
+We can take one more pass through the edges if we want; anything that would cause
+another relax operation to occur would indicate that the node is part of a negative
+weight cycle.
+
+The problem with this algorithm, though, is that it is slow.  The painful thing is
+that for normal graphs, most of the relax checks are going to do nothing.  Fortunately,
+there is a nice optimization that can help.
+
+*** Shortest Path Fast Algorithm.
+
+Here is the Shortest Path Fast Algorithm.  It is very similar to the Dijkstra's
+algorithm you know and love but we make two changes.  First, we no longer enqueue
+a pair consisting of the node and its distance,  we just enqueue the node.
+Second, we only enqueue a node if it is not currently in the queue.  We use the
+=in_queue= vector to keep track of this for us.
+
+Finally, when we dequeue something, we try relaxing all the edges, and anything
+that gets relaxed gets queued.
+
+If there is a negative edge that relaxes a node, it will get put back into the
+queue for another round.  But if there is a negative cycle, then all the nodes
+in the cycle will get added back to the queue.  To detect if there is a negative
+cycle, we can keep track of how many times a node gets added to the queue.
+If it is V or greater we know there is such a cycle.
+
+The nice thing about this algorithm is that on normal graphs it runs as fast
+as Dijkstra's algorithm, and on graphs with negative cycles it usually runs
+faster than Bellman Ford, since only the nodes affected by the negative weight
+cycle are going to be reprocessed.  There's no guarantee that this won't involve
+the whole graph, but if it doesn't, it will benefit from that situation.
+
+
+** Floyd Warshall
+:PROPERTIES:
+:EXPORT_FILE_NAME: floyd-warshall
+:END:
+
+@@hugo:{{< awsvideo slug="floyd-warshall" >}}@@
+
+
+Hello, and welcome to competitive programming.
+Today we are going to talk about Floyd Warshall's algorithm to find the shortest
+paths between every pair of vertices.
+
+*** Objectives
+
+Your objectives are to be able to implement the Floyd Warshall algorithm,
+to know the upper limit of the graph size for which this will work, and
+some of the problems that this algorithm can solve.
+
+*** The Algorithm
+
+To use this algorithm, we need an adjacency matrix, which you
+remember is a two dimensional array representing
+the graph.
+
+When the algorithm starts the matrix will have zeros down the diagonal and
+entries for the direct edges in the graph. All the other entries will be marked
+as infinite. We'll use a number like \(10^9\) to mean infinity.
+
+Now we have a triple nested loop. Notice the order of the indices, k, i, j. The
+basic idea is that k will be an intermediate node, and we will loop over all
+pairs of edges i and j to see what the shortest path is that goes through k.
+
+The line in the main loop is making the following calculation: entry i,j has the
+shortest path we have discovered so far that only involves nodes less than k. So
+in this loop we check to see if adding node k changes anything or not, and
+record the best path we find.
+
+We'll go over an example in a minute, but here's what you should notice right
+away. First, the code is dead simple. Four lines of code pretty much does it.
+But second, it runs in order \(V^3\) time. Practically speaking, that means this
+code will not be usable in a contest if the number of vertices is above 500. If
+in doubt, create a test case of maximal size and see if your code runs in the
+required time limit.
+
+Now, if you know the number of vertices is going to be small, there's a big advantage
+to using this algorithm even if you only need a single source shortest path.  The
+code is fast to type in, and if you are paying attention you will not even need to
+debug it.  You will be able to submit a solution more quickly than coders who have
+to implement Dijkstra or the Fast Algorithm.
+
+So now that you've memorized this code, let's look at an example run.
+
+*** Sample Run
+
+We'll start with this graph. We make an adjacency matrix, setting the diagonal
+to zero and the incident edges to their respective weights.
+
+Now, the first run of the k loop is going to have k=0, so that means we are going to check
+for every path that has 0 as an intermediate node.
+
+For this graph, there are three paths like that, all starting from the edge 5-0 of weight
+1.  (next)
+
+These are 5-0, 0-1; 5-0, 0-2; and 5-0, 0-3.  Notice how all the paths have length 2.
+
+Next we are going to run with k=1, which is going to calculate the paths that could have
+both 0 and 1 as an intermediate node.
+
+(next)
+
+There are two new paths that get added as a result.  The first is this one from 0 to 2,
+and that updates our shortest path entry.
+
+The next one is from 5 to 2.  We are making use of the 5 to 1 path we calculated in the
+previous run.
+
+As k keeps looping, we are able to combine shortest path results from longer and longer
+paths.  After a k loop is done, the array will have the shortest paths found for each
+pair of nodes that could have nodes k and below as intermediate nodes.
+
+*** Applications
+
+Here is one possible modification.  If you need to be able to produce the shortest
+path, you will need to keep a parent array.  Here's the code to do that.
+
+We add three things.  First, lines 0 through 2 initialize the parent array.
+Next, the inner statement of the three loops now updates the parent array if a new
+best match is found.
+
+Finally, we have a recursive function printPath that will traverse the parent
+array to emit the path.
