@@ -114,9 +114,9 @@ makes it very easy to determine if two items belong to the same set.
 *** In-class Problems
 - {{{uva(459)}}}
 
-** Template :noexport
+** Graph Traversal Properties
 :PROPERTIES:
-:EXPORT_FILE_NAME:
+:EXPORT_FILE_NAME: graph-traversal-properties
 :END:
 
 Text
