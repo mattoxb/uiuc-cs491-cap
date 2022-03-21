@@ -1,29 +1,22 @@
----
-# Title, summary, and page position.
-linktitle: IO
-summary: Let's get started
-weight: 2
-icon: book
-icon_pack: fas
++++
+title = "IO"
+author = ["Mattox Beckman"]
+draft = false
+type = "page"
++++
 
-# Page metadata.
-title: IO
-date: "2021-08-17T00:00:00Z"
-type: book
+With IO there are several things you need to be able to do.
 
-links:
-   - category: In-Class Problems
-     links:
-       - uva: 462
-         display: true
-   - category: Slides
-     links:
-       - title: IO
-         url: /slides/io.html
-         display: true
----
+-   Get the input.
+-   Convert the input into the data you need.
+-   Know when the input is done.
 
-The first thing you need to do is get the input.  The second thing you need to do is know when
-the input is over.
 
-{{<links>}}
+## In-class Problems {#in-class-problems}
+
+-   {{<UVa2 number="462" >}}
+
+
+## Slides {#slides}
+
+-   [IO](/slides/io.html)

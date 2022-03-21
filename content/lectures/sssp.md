@@ -12,7 +12,7 @@ between a single node and all the other nodes.  There are three algorithms
 that can do this, depending on the situation.
 
 -   Unweighted graphs use BFS
--   Weighted graphs with no negative edges use Dijkstra's algoritm
+-   Weighted graphs with no negative edges use Dijkstra's algorithm
 -   Weighted graphs with negative edges use the Bellman Ford algorithm.
 
 

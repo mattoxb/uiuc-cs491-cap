@@ -1,11 +1,45 @@
 #+HUGO_BASE_DIR: .
 #+HUGO_SECTION: lectures
+#+MACRO: uva @@hugo:{{<UVa2 number="$1" >}}@@
+* Ideas
+** IO
+- [ ] Introduce =sscanf= and =str.c_str()= as a way to parse input.
 
-* Lecture
+* Lectures
 :PROPERTIES:
 :EXPORT_HUGO_CUSTOM_FRONT_MATTER: :type page
 :EXPORT_HUGO_SECTION: lectures
 :END:
+
+** Course Introduction
+:PROPERTIES:
+:ID:       d6691455-f4dc-44ec-b6ae-2b169766e1af
+:EXPORT_FILE_NAME: course-introduction
+:END:
+
+Welcome to Competitive Programming!  Today we will talk about the benefits of competitive programming, the course structure, and the tools we will
+use in the course.
+
+*** In-class Problems
+ - {{{uva(11559)}}}
+*** Slides
+ - [[/slides/introduction.html][Course Introduction]]
+** IO
+:PROPERTIES:
+:ID:       8681d8b8-63bb-4c60-a3a1-2bf1f7cab945
+:EXPORT_FILE_NAME: io
+:END:
+
+With IO there are several things you need to be able to do.
+
+- Get the input.
+- Convert the input into the data you need.
+- Know when the input is done.
+
+*** In-class Problems
+- {{{uva(462)}}}
+*** Slides
+- [[/slides/io.html][IO]]
 
 ** Single Source Shortest Path
 :PROPERTIES:
@@ -20,7 +54,7 @@ between a single node and all the other nodes.  There are three algorithms
 that can do this, depending on the situation.
 
   - Unweighted graphs use BFS
-  - Weighted graphs with no negative edges use Dijkstra's algoritm
+  - Weighted graphs with no negative edges use Dijkstra's algorithm
   - Weighted graphs with negative edges use the Bellman Ford algorithm.
 
 *** Videos
@@ -60,6 +94,36 @@ is Floyd Warshall.
 *** Problem
 
   - @@hugo:{{<UVa id="762" name="821 - Page Hopping" >}}@@
+
+
+** Union Find
+:PROPERTIES:
+:EXPORT_FILE_NAME: union-find
+:ID:       c97db33b-fbc7-4394-8dc4-30642e0575b0
+:END:
+
+*** Synopsis
+
+For some graph algorithms you will need union find.  This data structure
+makes it very easy to determine if two items belong to the same set.
+
+*** Recommended Reading
+
+- [[https://www.geeksforgeeks.org/union-find][Geeks for Geeks Union Find]]
+
+*** In-class Problems
+- {{{uva(459)}}}
+
+** Template :noexport
+:PROPERTIES:
+:EXPORT_FILE_NAME:
+:END:
+
+Text
+*** In-class Problems
+- {{{uva(462)}}}
+*** Slides
+- [[/slides/*.html][]]
 
 * Videos
 :PROPERTIES:
