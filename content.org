@@ -117,13 +117,26 @@ makes it very easy to determine if two items belong to the same set.
 ** Graph Traversal Properties
 :PROPERTIES:
 :EXPORT_FILE_NAME: graph-traversal-properties
+:ID:       25f18b32-bef2-4be8-86c4-8b971ab12c73
 :END:
+*** Synopsis
 
-Text
-*** In-class Problems
-- {{{uva(462)}}}
-*** Slides
-- [[/slides/*.html][]]
+  We will do more with DFS and BFS.  You will learn about
+    - Bipartite checking
+    - Cut edge detection
+    - Topological Sort
+
+*** Videos
+
+  - [[/videos/graph-traversal-properties][Graph Traversal Properties]]
+
+*** Recommended Reading
+
+ - Competitive Programming 4, 4.2.2 -- 4.2.3
+
+*** In-class Problem
+ - {{{uva(10116)}}}
+
 
 * Videos
 :PROPERTIES:
@@ -517,3 +530,20 @@ best match is found.
 
 Finally, we have a recursive function printPath that will traverse the parent
 array to emit the path.
+
+
+* Templates :noexport:
+** Lecture
+:PROPERTIES:
+:EXPORT_FILE_NAME:
+:END:
+
+*** Synopsis
+
+*** Videos
+  - [[/videos/Foo][Foo]]
+
+*** Recommended Reading
+
+*** In-class Problems
+- {{{uva(1234)}}}

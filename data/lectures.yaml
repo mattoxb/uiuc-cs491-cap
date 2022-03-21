@@ -72,3 +72,8 @@ union-find:
   date: 2022-03-21
   title: Union Find
   slug: union-find
+
+graph-traversal-properties:
+  date: 2022-03-23
+  title: Graph Traversal Properties
+  slug: graph-traversal-properties
