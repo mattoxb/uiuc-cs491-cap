@@ -77,3 +77,8 @@ graph-traversal-properties:
   date: 2022-03-23
   title: Graph Traversal Properties
   slug: graph-traversal-properties
+
+segment-trees:
+  date: 2022-03-29
+  title: Segment Trees
+  slug: segment-trees

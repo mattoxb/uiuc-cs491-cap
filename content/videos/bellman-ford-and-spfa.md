@@ -20,7 +20,7 @@ Your objectives are to be able to describe why we need these algorithms and
 to be able to implement them.
 
 
-## Normal Dijstra. {#normal-dijstra-dot}
+## Normal Dijkstra. {#normal-dijkstra-dot}
 
 As a review, look at this graph from the Dijkstra lecture.  I've modified
 it just a bit so that the example will be more interesting.  You should pause

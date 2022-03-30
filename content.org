@@ -138,6 +138,22 @@ makes it very easy to determine if two items belong to the same set.
  - {{{uva(10116)}}}
 
 
+** Segment Trees
+:PROPERTIES:
+:EXPORT_FILE_NAME: segment-trees
+:END:
+
+*** Synopsis
+
+We introduce the segment tree, a data structure that makes queries over ranges
+in ${\mathcal O}(\log n)$ time.
+
+*** Videos
+  - [[/videos/segment-trees][Segment Trees]]
+
+*** In-class Problems
+- {{{uva(11235)}}}
+
 * Videos
 :PROPERTIES:
 :EXPORT_HUGO_CUSTOM_FRONT_MATTER: :type page
@@ -368,7 +384,7 @@ optimization called Shortest Path Fast Algorithm.
 Your objectives are to be able to describe why we need these algorithms and
 to be able to implement them.
 
-*** Normal Dijstra.
+*** Normal Dijkstra.
 
 As a review, look at this graph from the Dijkstra lecture.  I've modified
 it just a bit so that the example will be more interesting.  You should pause
