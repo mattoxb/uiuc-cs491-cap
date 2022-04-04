@@ -82,3 +82,13 @@ segment-trees:
   date: 2022-03-29
   title: Segment Trees
   slug: segment-trees
+
+points-lines-vectors:
+  date: 2022-04-04
+  title: Points, Lines, Vectors
+  slug: points-lines-vectors
+
+shapes:
+  date: 2022-04-06
+  title: Shapes
+  slug: shapes

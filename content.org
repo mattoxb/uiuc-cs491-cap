@@ -154,6 +154,33 @@ in ${\mathcal O}(\log n)$ time.
 *** In-class Problems
 - {{{uva(11235)}}}
 
+** Points, Lines, and Vectors
+:PROPERTIES:
+:EXPORT_FILE_NAME: points-lines-vectors
+:END:
+
+*** Synopsis
+  - A new section; this time on computational geometry!
+  - We will start with points, lines, and vectors.
+
+*** Videos
+  - [[/videos/points-lines-vectors][Points, Lines, Vectors]]
+
+*** In-class Problems
+- {{{uva(10263)}}}
+
+
+** Shapes
+:PROPERTIES:
+:EXPORT_FILE_NAME: shapes
+:END:
+
+*** Synopsis
+- Circles and Triangles
+
+*** In-class Problems
+- {{{uva(10589)}}}
+
 * Videos
 :PROPERTIES:
 :EXPORT_HUGO_CUSTOM_FRONT_MATTER: :type page
