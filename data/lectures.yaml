@@ -83,12 +83,17 @@ segment-trees:
   title: Segment Trees
   slug: segment-trees
 
-points-lines-vectors:
+minimum-spanning-trees:
   date: 2022-04-04
+  title: Minimum Spanning Trees
+  slug: minimum-spanning-trees
+
+points-lines-vectors:
+  date: 2022-04-06
   title: Points, Lines, Vectors
   slug: points-lines-vectors
 
 shapes:
-  date: 2022-04-06
+  date: 2022-04-11
   title: Shapes
   slug: shapes
