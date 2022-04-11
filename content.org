@@ -175,11 +175,31 @@ in ${\mathcal O}(\log n)$ time.
 :EXPORT_FILE_NAME: shapes
 :END:
 
+This is just an enumeration of the formulas that are useful for dealing with circles and triangles.
+
 *** Synopsis
-- Circles and Triangles
+- [[/slides/shapes.html][Circles and Triangles]]
 
 *** In-class Problems
 - {{{uva(10589)}}}
+** Minimum Spanning Trees
+:PROPERTIES:
+:EXPORT_FILE_NAME: minimum-spanning-trees
+:END:
+
+*** Synopsis
+
+You can create a subgraph of a graph that is a spanning tree, one that keeps the graph connected.
+If you minimize the edge weight while doing this we have a minimum spanning tree.
+
+*** Videos
+
+  - [[/videos/minimum-spanning-trees][Minimum Spanning Trees]]
+  - [[/videos/kruscals-algorithm][Kruscal's Algorithm]]
+
+*** Problem
+
+ - {{{uva(11228)}}}
 
 * Videos
 :PROPERTIES:
