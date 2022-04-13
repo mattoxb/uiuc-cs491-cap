@@ -97,3 +97,8 @@ shapes:
   date: 2022-04-11
   title: Shapes
   slug: shapes
+
+gcd:
+  date: 2022-04-13
+  title: GCD and Diophantine Equations
+  slug: gcd

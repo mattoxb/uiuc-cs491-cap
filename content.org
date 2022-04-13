@@ -201,6 +201,27 @@ If you minimize the edge weight while doing this we have a minimum spanning tree
 
  - {{{uva(11228)}}}
 
+** GCD and Diophantine Equations
+:PROPERTIES:
+:EXPORT_FILE_NAME: gcd
+:END:
+
+*** Synopsis
+
+Learn how to take the GCD of two numbers and solve different problem types with it.
+
+*** Recommended Reading
+
+- Competitive Programming 4, Section 5.3.6
+
+*** Video
+ - [[/videos/euclids-algorithm][Euclid's Algorithm]]
+
+*** Problem
+
+- {{{10090}}}
+
+
 * Videos
 :PROPERTIES:
 :EXPORT_HUGO_CUSTOM_FRONT_MATTER: :type page
