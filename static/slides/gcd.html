@@ -1,0 +1,792 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Euclid&rsquo;s Algorithm for GCD</title>
+<meta name="author" content="Mattox Beckman"/>
+<style type="text/css">
+.underline { text-decoration: underline; }
+</style>
+<link rel="stylesheet" href="../dist/reveal.css"/>
+
+<link rel="stylesheet" href="../dist/theme/beige.css" id="theme"/>
+
+<link rel="stylesheet" href="custom.css"/>
+<link rel="stylesheet" href="../plugin/highlight/zenburn.css"/>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+<section id="sec-title-slide">
+<h1 class="title">Euclid&rsquo;s Algorithm for GCD</h1><h2 class="author">Mattox Beckman</h2>
+</section>
+<section id="table-of-contents-section">
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#/slide-f25fe7fb-6038-4ba8-b265-772306c7edb0">Objectives</a></li>
+<li><a href="#/slide-afe69381-7ea2-4486-afda-81ca8bccf39d">Euclid&rsquo;s Algorithm</a></li>
+<li><a href="#/slide-e67c55b7-6991-43c8-9548-24612e6c712d">Calculating GCD with simple subtraction.</a></li>
+<li><a href="#/slide-c934eadd-3c1e-4d5d-861b-e5f2b4ecc227">Example 1</a></li>
+<li><a href="#/slide-827c0328-2a10-47e1-83bb-98f3802722bd">Euclid&rsquo;s Algorithm</a></li>
+<li><a href="#/slide-509b7ecd-18e2-485b-9b6f-4489c3fa92b1">Diophantine Equations</a></li>
+<li><a href="#/slide-cf6fdb13-cbc4-4572-9569-6f544b41e759">Calculating \(x\) and \(y\).</a></li>
+<li><a href="#/slide-org21f7fbb">Source code</a></li>
+<li><a href="#/slide-orgd45e1d0">Example</a></li>
+<li><a href="#/slide-0b8e34f4-9d90-4a4e-b2f7-5506719aa766">Result</a></li>
+</ul>
+</div>
+</div>
+</section>
+
+<section>
+<section id="slide-f25fe7fb-6038-4ba8-b265-772306c7edb0">
+<h2 id="f25fe7fb-6038-4ba8-b265-772306c7edb0">Objectives</h2>
+<ul>
+<li>Use Euclid&rsquo;s algorithm to calculate the GCD of two numbers.</li>
+<li>Use the extended Euclid&rsquo;s algorithm to solve Linear Diophantine equations.</li>
+
+</ul>
+
+</section>
+</section>
+<section>
+<section id="slide-afe69381-7ea2-4486-afda-81ca8bccf39d">
+<h2 id="afe69381-7ea2-4486-afda-81ca8bccf39d">Euclid&rsquo;s Algorithm</h2>
+<ul>
+<li>Reminder: the GCD of two numbers \(a\) and \(b\) is the largest factor \(g\) that divides both \(a\) and \(b\).</li>
+<li>Notation: \(g|a\) means &ldquo;\(g\) divides \(a\).&rdquo;</li>
+<li>To take the GCD of two numbers \(a\) and \(b\) you <i>could</i> just factor the numbers, but that is expensive.</li>
+<li>Euclid&rsquo;s algorithm is faster!</li>
+
+</ul>
+
+
+</section>
+</section>
+<section>
+<section id="slide-e67c55b7-6991-43c8-9548-24612e6c712d">
+<h2 id="e67c55b7-6991-43c8-9548-24612e6c712d">Calculating GCD with simple subtraction.</h2>
+<ul>
+<li>Let \(a\) be the largest number, let \(b\) be the smaller one.  We want \(g = gcd(a,b)\)</li>
+<li>Mathematical fact: If \(g|a\) and \(g|b\) then also \(g|(a+b)\) and \(g|(a-b)\)
+<ul>
+<li>So, we can recursively define \(gcd(a,b) = gcd(b,a-b)\) (when \(a>b>0\)).</li>
+<li>Also \(gcd(a,0) = a\).</li>
+
+</ul></li>
+<li><p>
+How long would this take?
+</p>
+
+<div class="org-src-container">
+
+<pre><code class="c++" >int gcd(int a, int b) {
+  if (b==0) return a;
+  if (a&lt;b) return gcd(b,a);
+  return gcd(b,a-b);
+}
+</code></pre>
+</div></li>
+
+</ul>
+
+</section>
+</section>
+<section>
+<section id="slide-c934eadd-3c1e-4d5d-861b-e5f2b4ecc227">
+<h2 id="c934eadd-3c1e-4d5d-861b-e5f2b4ecc227">Example 1</h2>
+<ul>
+<li>28 = \(2\times 2\times 7\), 20 = \(2\times 2 \times 5\)</li>
+
+<li>\(gcd(28,20) = gcd(20,8) = gcd(12,8) = gcd(8,4) = gcd(4,0) = 4\)</li>
+
+</ul>
+
+</section>
+</section>
+<section>
+<section id="slide-827c0328-2a10-47e1-83bb-98f3802722bd">
+<h2 id="827c0328-2a10-47e1-83bb-98f3802722bd">Euclid&rsquo;s Algorithm</h2>
+<ul>
+<li>Subtraction is slow.  Let&rsquo;s try subtracting <i>multiples</i>.
+<ul>
+<li>\(gcd(a,b) = gcd(b,a-nb)\) where \(n\) is an integer and \(a-nb \ge 0\).</li>
+
+</ul></li>
+<li>For such \(n\), notice \(r = a-nb = mod(a,b)\).</li>
+<li>We know \(g|a\) and \(g|nb\).</li>
+<li>Therefore, we also know \(g|r\).</li>
+<li>Therefore, \(gcd(a,b) = gcd(b,mod(a,b))\).</li>
+
+</ul>
+
+<div class="org-src-container">
+
+<pre><code class="C++" >int gcd(int a, int b) {
+  if (b==0) return a;
+  if (a&lt;b) return gcd(b,a);
+  return gcd(b,a % b);
+}
+</code></pre>
+</div>
+
+</section>
+<section id="slide-org1e6504a">
+<h3 id="org1e6504a">Example: \(gcd(30,28)\)</h3>
+<ul>
+<li>30 = 2*3*5 , 28 = 2*2*7</li>
+<li>30 = 28*1 + 2</li>
+<li>28 = 14*2 + 0</li>
+<li>GCD is 2</li>
+
+</ul>
+
+</section>
+<section id="slide-orgb8af3db">
+<h3 id="orgb8af3db">Example: \(gcd(28,20)\)</h3>
+<ul>
+<li>28 = 2*2*7, 20 = 2*2*5</li>
+<li>28 = 20*1 + 8</li>
+<li>20 = 8*2 + 4</li>
+<li>8 = 4*2 + 0</li>
+<li>GCD is 4</li>
+
+</ul>
+
+</section>
+</section>
+<section>
+<section id="slide-509b7ecd-18e2-485b-9b6f-4489c3fa92b1">
+<h2 id="509b7ecd-18e2-485b-9b6f-4489c3fa92b1">Diophantine Equations</h2>
+<ul>
+<li>A Diophantine Equation is a polynomial equation where we are only interested in integer solutions.</li>
+<li>Linear Diophantine equation: \(ax + by = g\),
+<ul>
+<li>Let \(g = gcd(a,b)\) for this discussion.</li>
+
+</ul></li>
+<li>Running example: Suppose you go to the store. You buy \(x\) apples at 72 cents each and \(y\) oranges at 33 cents each. You spend $5.85. How many of each did you buy?</li>
+
+</ul>
+
+</section>
+</section>
+<section>
+<section id="slide-cf6fdb13-cbc4-4572-9569-6f544b41e759">
+<h2 id="cf6fdb13-cbc4-4572-9569-6f544b41e759">Calculating \(x\) and \(y\).</h2>
+<ul>
+<li>Given:
+<ul>
+<li>\(ax+by=g\)</li>
+<li>\(g = gcd(a,b)\).</li>
+
+</ul></li>
+
+<li>We can &ldquo;Euclid Algorithm&rdquo; the equation:
+\[bx_1 + (a\ mod\ b)y_1 = g\]</li>
+
+<li><p>
+Get rid of modulus: \(a\ mod\ b = a - \lfloor {a\over b}\rfloor \times b\)
+</p>
+
+<p>
+\[bx_1 + (a-\lfloor{a\over b}\rfloor y_1) = g\]
+</p></li>
+
+<li><p>
+Rearrange to get coefficients of \(a\) and \(b\):
+</p>
+
+<p>
+\[ ay_1 + b(x_1 - \lfloor {a\over b}\rfloor y_1) = g \]
+</p></li>
+
+<li>Therefore \(x = y_1\) and \(y = x_1 - \lfloor {a\over b} \rfloor y_1\)</li>
+
+</ul>
+
+</section>
+</section>
+<section>
+<section id="slide-org21f7fbb">
+<h2 id="org21f7fbb">Source code</h2>
+<div class="org-src-container">
+
+<pre><code class="c++" >void extendedEuclid(int a, int b, int &amp;x, int &amp;y, int &amp;d) {
+   if (b == 0) {
+     x = 1; y = 0; d = a; return;
+   }
+   extendedEuclid(b, a % b);
+
+   int x1 = y;
+   int y1 = x - (a / b) * y;
+
+   x = x1;
+   y = y1;
+}
+</code></pre>
+</div>
+
+</section>
+</section>
+<section>
+<section id="slide-orgd45e1d0">
+<h2 id="orgd45e1d0">Example</h2>
+<p>
+Suppose you go to the store. You buy \(x\) apples at 72 cents each and \(y\) oranges at 33 cents each. You spend $5.85. How many of each did you buy?
+</p>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-right">\(a\)</th>
+<th scope="col" class="org-right">\(b\)</th>
+<th scope="col" class="org-left">\(x\)</th>
+<th scope="col" class="org-left">\(y\)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-right">72</td>
+<td class="org-right">33</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+</tbody>
+</table>
+
+</section>
+<section id="slide-2832d4d3-6c6d-4b6b-ad15-5abeb82be77d">
+<h3 id="2832d4d3-6c6d-4b6b-ad15-5abeb82be77d">r1</h3>
+<p>
+Suppose you go to the store. You buy \(x\) apples at 72 cents each and \(y\) oranges at 33 cents each. You spend $5.85. How many of each did you buy?
+</p>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-right">\(a\)</th>
+<th scope="col" class="org-right">\(b\)</th>
+<th scope="col" class="org-left">\(x\)</th>
+<th scope="col" class="org-left">\(y\)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-right">72</td>
+<td class="org-right">33</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-right">33</td>
+<td class="org-right">6</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+</tbody>
+</table>
+
+</section>
+<section id="slide-cba2f8f0-150b-4deb-afe0-3160cdb6e37d">
+<h3 id="cba2f8f0-150b-4deb-afe0-3160cdb6e37d">r2</h3>
+<p>
+Suppose you go to the store. You buy \(x\) apples at 72 cents each and \(y\) oranges at 33 cents each. You spend $5.85. How many of each did you buy?
+</p>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-right">\(a\)</th>
+<th scope="col" class="org-right">\(b\)</th>
+<th scope="col" class="org-left">\(x\)</th>
+<th scope="col" class="org-left">\(y\)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-right">72</td>
+<td class="org-right">33</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-right">33</td>
+<td class="org-right">6</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-right">6</td>
+<td class="org-right">3</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+</tbody>
+</table>
+
+</section>
+<section id="slide-241d4315-ba15-4c7c-b043-1e883cc22923">
+<h3 id="241d4315-ba15-4c7c-b043-1e883cc22923">r3</h3>
+<p>
+Suppose you go to the store. You buy \(x\) apples at 72 cents each and \(y\) oranges at 33 cents each. You spend $5.85. How many of each did you buy?
+</p>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-right">\(a\)</th>
+<th scope="col" class="org-right">\(b\)</th>
+<th scope="col" class="org-left">\(x\)</th>
+<th scope="col" class="org-left">\(y\)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-right">72</td>
+<td class="org-right">33</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-right">33</td>
+<td class="org-right">6</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-right">6</td>
+<td class="org-right">3</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-right">3</td>
+<td class="org-right">0</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+</tbody>
+</table>
+
+</section>
+<section id="slide-31a67c03-06b2-4755-8c07-85fed5311cec">
+<h3 id="31a67c03-06b2-4755-8c07-85fed5311cec">r4</h3>
+<p>
+Suppose you go to the store. You buy \(x\) apples at 72 cents each and \(y\) oranges at 33 cents each. You spend $5.85. How many of each did you buy?
+</p>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-right">\(a\)</th>
+<th scope="col" class="org-right">\(b\)</th>
+<th scope="col" class="org-left">\(x\)</th>
+<th scope="col" class="org-left">\(y\)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-right">72</td>
+<td class="org-right">33</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-right">33</td>
+<td class="org-right">6</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-right">6</td>
+<td class="org-right">3</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-right">3</td>
+<td class="org-right">0</td>
+<td class="org-left">1</td>
+<td class="org-left">0</td>
+</tr>
+</tbody>
+</table>
+
+</section>
+<section id="slide-638d550b-296f-4a08-acf3-b9e98a87ef2c">
+<h3 id="638d550b-296f-4a08-acf3-b9e98a87ef2c">r5</h3>
+<p>
+Suppose you go to the store. You buy \(x\) apples at 72 cents each and \(y\) oranges at 33 cents each. You spend $5.85. How many of each did you buy?
+</p>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-right">\(a\)</th>
+<th scope="col" class="org-right">\(b\)</th>
+<th scope="col" class="org-left">\(x\)</th>
+<th scope="col" class="org-left">\(y\)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-right">72</td>
+<td class="org-right">33</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-right">33</td>
+<td class="org-right">6</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-right">6</td>
+<td class="org-right">3</td>
+<td class="org-left">0</td>
+<td class="org-left">1</td>
+</tr>
+
+<tr>
+<td class="org-right">3</td>
+<td class="org-right">0</td>
+<td class="org-left">1</td>
+<td class="org-left">0</td>
+</tr>
+</tbody>
+</table>
+
+</section>
+<section id="slide-a6ec309d-2ca5-4112-a324-25e5e63f06a1">
+<h3 id="a6ec309d-2ca5-4112-a324-25e5e63f06a1">r6</h3>
+<p>
+Suppose you go to the store. You buy \(x\) apples at 72 cents each and \(y\) oranges at 33 cents each. You spend $5.85. How many of each did you buy?
+</p>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-right">\(a\)</th>
+<th scope="col" class="org-right">\(b\)</th>
+<th scope="col" class="org-right">\(x\)</th>
+<th scope="col" class="org-right">\(y\)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-right">72</td>
+<td class="org-right">33</td>
+<td class="org-right">&#xa0;</td>
+<td class="org-right">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-right">33</td>
+<td class="org-right">6</td>
+<td class="org-right">1</td>
+<td class="org-right">-5</td>
+</tr>
+
+<tr>
+<td class="org-right">6</td>
+<td class="org-right">3</td>
+<td class="org-right">0</td>
+<td class="org-right">1</td>
+</tr>
+
+<tr>
+<td class="org-right">3</td>
+<td class="org-right">0</td>
+<td class="org-right">1</td>
+<td class="org-right">0</td>
+</tr>
+</tbody>
+</table>
+
+</section>
+<section id="slide-80161af9-14f6-45b7-99c1-615b8dd036ab">
+<h3 id="80161af9-14f6-45b7-99c1-615b8dd036ab">r7</h3>
+<p>
+Suppose you go to the store. You buy \(x\) apples at 72 cents each and \(y\) oranges at 33 cents each. You spend $5.85. How many of each did you buy?
+</p>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-right">\(a\)</th>
+<th scope="col" class="org-right">\(b\)</th>
+<th scope="col" class="org-right">\(x\)</th>
+<th scope="col" class="org-right">\(y\)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-right">72</td>
+<td class="org-right">33</td>
+<td class="org-right">-5</td>
+<td class="org-right">11</td>
+</tr>
+
+<tr>
+<td class="org-right">33</td>
+<td class="org-right">6</td>
+<td class="org-right">1</td>
+<td class="org-right">-5</td>
+</tr>
+
+<tr>
+<td class="org-right">6</td>
+<td class="org-right">3</td>
+<td class="org-right">0</td>
+<td class="org-right">1</td>
+</tr>
+
+<tr>
+<td class="org-right">3</td>
+<td class="org-right">0</td>
+<td class="org-right">1</td>
+<td class="org-right">0</td>
+</tr>
+</tbody>
+</table>
+
+</section>
+<section id="slide-086b2d43-46aa-4a14-862f-05594f20c693">
+<h3 id="086b2d43-46aa-4a14-862f-05594f20c693">r8</h3>
+<p>
+Suppose you go to the store. You buy \(x\) apples at 72 cents each and \(y\) oranges at 33 cents each. You spend $5.85. How many of each did you buy?
+</p>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-right">\(a\)</th>
+<th scope="col" class="org-right">\(b\)</th>
+<th scope="col" class="org-right">\(x\)</th>
+<th scope="col" class="org-right">\(y\)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-right">72</td>
+<td class="org-right">33</td>
+<td class="org-right">-5</td>
+<td class="org-right">11</td>
+</tr>
+
+<tr>
+<td class="org-right">33</td>
+<td class="org-right">6</td>
+<td class="org-right">1</td>
+<td class="org-right">-5</td>
+</tr>
+
+<tr>
+<td class="org-right">6</td>
+<td class="org-right">3</td>
+<td class="org-right">0</td>
+<td class="org-right">1</td>
+</tr>
+
+<tr>
+<td class="org-right">3</td>
+<td class="org-right">0</td>
+<td class="org-right">1</td>
+<td class="org-right">0</td>
+</tr>
+</tbody>
+</table>
+
+<p>
+\[ 72 \times -5 + 33 \times 11 = 3 \]
+</p>
+
+</section>
+</section>
+<section>
+<section id="slide-0b8e34f4-9d90-4a4e-b2f7-5506719aa766">
+<h2 id="0b8e34f4-9d90-4a4e-b2f7-5506719aa766">Result</h2>
+<p>
+Suppose you go to the store. You buy \(x\) apples at 72 cents each and \(y\) oranges at 33 cents each. You spend $5.85. How many of each did you buy?
+</p>
+
+<ul>
+<li>\(72 \times -5 + 33 \times 11 = 3\)</li>
+
+</ul>
+
+<ul>
+<li>Multiply both sides by 195
+<ul>
+<li>\(72 \times -975 + 33 \times 2145 = 3\)</li>
+
+</ul></li>
+<li>We can add \(72({33\over3})n\) to the 72 term and subtract \(33({72\over 3})n\) to the 33 term.</li>
+<li>Solve for n:
+<ul>
+<li>\(-975 + 11n > 0\)</li>
+
+</ul></li>
+<li>\(n> 88.6\), so take \(n=89\).</li>
+<li>Final equation:
+<ul>
+<li>\(72 \times 4 + 33 \times 9 = 585\)</li>
+
+</ul></li>
+
+</ul>
+</section>
+</section>
+</div>
+</div>
+<script src="../dist/reveal.js"></script>
+<script src="../plugin/highlight/highlight.js"></script>
+<script src="../plugin/notes/notes.js"></script>
+<script>
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+
+controls: true,
+progress: true,
+history: false,
+center: true,
+slideNumber: 'c',
+rollingLinks: false,
+keyboard: true,
+mouseWheel: false,
+fragmentInURL: false,
+hashOneBasedIndex: false,
+pdfSeparateFragments: true,
+overview: true,
+
+transition: 'none',
+transitionSpeed: 'default',
+hash:true, respond_to_hash_changes:true, max_scale:2.0, width:1200, height:900, center:false,
+
+// Plugins with reveal.js 4.x
+plugins: [ RevealHighlight, RevealNotes ],
+
+// Optional libraries used to extend reveal.js
+dependencies: [
+]
+
+});
+</script>
+</body>
+</html>
