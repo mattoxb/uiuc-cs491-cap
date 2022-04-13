@@ -17,9 +17,9 @@ Learn how to take the GCD of two numbers and solve different problem types with 
 
 ## Video {#video}
 
--   [Euclid's Algorithm](/videos/euclids-algorithm)
+-   [Slides](/slides/gcd.html)
 
 
 ## Problem {#problem}
 
--   {{{10090}}}
+-   {{<UVa2 number="10090" >}}

@@ -215,11 +215,11 @@ Learn how to take the GCD of two numbers and solve different problem types with 
 - Competitive Programming 4, Section 5.3.6
 
 *** Video
- - [[/videos/euclids-algorithm][Euclid's Algorithm]]
+ - [[/slides/gcd.html][Slides]]
 
 *** Problem
 
-- {{{10090}}}
+- {{{uva(10090)}}}
 
 
 * Videos
