@@ -221,6 +221,24 @@ Learn how to take the GCD of two numbers and solve different problem types with 
 
 - {{{uva(10090)}}}
 
+** Combinatorics
+:PROPERTIES:
+:EXPORT_FILE_NAME: combinatorics
+:END:
+
+*** Synopsis
+
+Many problems involve combinatorial reasoning.  Today we will talk about four
+sequences that come up: Fibonacci, Binomial Coefficients, Derangements, and Catalan Numbers.
+
+*** Slides
+  - [[/slides/combinatorics.pdf][Combinatorics]]
+
+*** Recommended Reading
+
+*** In-class Problems
+- {{{uva(10541)}}}  Note that 50 digits requires 166 bits.  You probably want Python or Java.
+
 
 * Videos
 :PROPERTIES:
