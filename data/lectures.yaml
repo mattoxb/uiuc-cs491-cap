@@ -102,3 +102,8 @@ gcd:
   date: 2022-04-13
   title: GCD and Diophantine Equations
   slug: gcd
+
+combinatorics:
+  date: 2022-04-18
+  title: Combinatorics
+  slug: combinatorics
