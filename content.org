@@ -240,6 +240,18 @@ sequences that come up: Fibonacci, Binomial Coefficients, Derangements, and Cata
 - {{{uva(10541)}}}  Note that 50 digits requires 166 bits.  You probably want Python or Java.
 
 
+** Convex Hull
+:PROPERTIES:
+:EXPORT_FILE_NAME: convex-hull
+:END:
+
+*** Synopsis
+
+We talk about polygons and the convex hull algorithm.
+
+*** In-class Problems
+- {{{uva(1111)}}}
+
 * Videos
 :PROPERTIES:
 :EXPORT_HUGO_CUSTOM_FRONT_MATTER: :type page
