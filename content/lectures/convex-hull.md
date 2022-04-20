@@ -9,6 +9,8 @@ type = "page"
 
 We talk about polygons and the convex hull algorithm.
 
+-   [Convex Hull Slides](/slides/convex-hull.html)
+
 
 ## In-class Problems {#in-class-problems}
 

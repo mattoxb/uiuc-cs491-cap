@@ -249,6 +249,8 @@ sequences that come up: Fibonacci, Binomial Coefficients, Derangements, and Cata
 
 We talk about polygons and the convex hull algorithm.
 
+- [[/slides/convex-hull.html][Convex Hull Slides]]
+
 *** In-class Problems
 - {{{uva(1111)}}}
 
