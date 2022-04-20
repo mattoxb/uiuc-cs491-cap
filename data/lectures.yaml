@@ -107,3 +107,8 @@ combinatorics:
   date: 2022-04-18
   title: Combinatorics
   slug: combinatorics
+
+convex-hull:
+  date: 2022-04-20
+  title: Convex Hull
+  slug: convex-hull
