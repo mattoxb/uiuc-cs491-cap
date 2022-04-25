@@ -254,6 +254,23 @@ We talk about polygons and the convex hull algorithm.
 *** In-class Problems
 - {{{uva(1111)}}}
 
+** String DP
+:PROPERTIES:
+:EXPORT_FILE_NAME: string-dp
+:END:
+
+*** Synopsis
+
+We will use dynamic programming to solve two classic string problems:
+- Levinstein (Edit) Distance
+- Longest Common Subsequence
+
+*** Slides
+- [[/slides/string-dp.pdf][Slides]]
+
+*** In-class Problems
+- {{{uva(12747)}}}
+
 * Videos
 :PROPERTIES:
 :EXPORT_HUGO_CUSTOM_FRONT_MATTER: :type page
